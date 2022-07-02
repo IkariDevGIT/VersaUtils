@@ -1,7 +1,9 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,10 +13,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace VersaUtils
 {
     public partial class VersaUtils : Form
     {
+
         public VersaUtils()
         {
             InitializeComponent();
@@ -22,6 +26,9 @@ namespace VersaUtils
             PCINFO_INFO_freespace.Visible = false;
             label8.Visible = false;
             label10.Visible = false;
+            //AutoShutdown_progressBar.ForeColor(Color.Brown);
+           // AutoShutdown_progressBar.BackColor(Color.Brown);
+
 
         }
 
@@ -52,7 +59,8 @@ namespace VersaUtils
             {
                 //|
                 int index = tabControl.SelectedIndex;
-                if (index == 4){
+                if (index == 4 | index == 6)
+                {
                     tabControl.SelectedIndex = 0;
                     MessageBox.Show("Sorry, under construction!", "Stop!");
                 }else if(index == 5) {
@@ -62,15 +70,21 @@ namespace VersaUtils
             }
         }
 
-
-
-
-
-
-
         private void InfoWindow()
         {
-            MessageBox.Show("Made with ❤ by ikaridev.", "Info");
+            MessageBox.Show("Made with ❤ by ikaridev.\n\n ////Help////\nlol", "Info");
+        }
+
+
+
+
+
+
+
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            InfoWindow();
         }
 
         private void Title_Click(object sender, EventArgs e)
@@ -342,9 +356,172 @@ namespace VersaUtils
             //{
             //}
         }
+
+
+
         //////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////
+
+
+
+
+
+        //////////////////////////////////////////////////////////////////////
+        /////////////////////////VUFE - File Editor///////////////////////////
+        //////////////////////////////////////////////////////////////////////
+
+        private void VUFE_new_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Do you really want to make a new file?",
+            "Warning!!", MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes) { VUFE_richTextBox.Text = ""; Log("New VUFE File was created!"); }
+        }
+
+        private void VUFE_open_Click(object sender, EventArgs e)
+        {
+            if (VUFE_OpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string text = System.IO.File.ReadAllText(VUFE_OpenFileDialog.FileName);
+                VUFE_richTextBox.Text = text;
+                Log("VUFE file " + VUFE_OpenFileDialog.FileName + " was opened!");
+            }
+        }
+
+        private void VUFE_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Random rndr = new Random();
+                int number = rndr.Next(10, 20);
+                int length = (int)number;
+                //var words = new List<string> { };
+                StringBuilder words = new StringBuilder();
+
+                const string valid = "abcdefghijklmnopqrstuvwxyz";
+                const string valid2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                const string valid3 = "1234567890";
+                const string valid4 = @"!§$%&/()=?`_:;-.,´}][{*+";
+
+                if (true) { words.Append(valid); }
+                if (true) { words.Append(valid2); }
+                if (true) { words.Append(valid3); }
+                if (false) { words.Append(valid4); }
+
+
+                StringBuilder res = new StringBuilder();
+                Random rnd = new Random();
+                while (0 < length--)
+                {
+                    res.Append(words[rnd.Next(words.Length)]);
+                }
+
+
+
+                //Random rnd = new Random();
+                //int number = rnd.Next(1, 2147483647);
+                VUFE_SaveFileDialog.FileName = "VUFE File" + " fileid_" + res.ToString();
+            }
+            catch (Exception ex)
+            {
+                Log(ex.ToString());
+            }
+
+            if (VUFE_SaveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //log.WriteAllText(saveFileDialog1.FileName);
+
+                //Use StreamWriter class.
+                
+                StreamWriter sw = new StreamWriter(VUFE_SaveFileDialog.FileName);
+
+                //Use write method to write the text
+                sw.Write(VUFE_richTextBox.Text);
+
+                //always close your stream
+                sw.Close();
+                Log("VUFE file " + VUFE_SaveFileDialog.FileName + " was saved!");
+                
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////
+
+        public int vala;
+        private void AutoShutdown_Start_Click(object sender, EventArgs e)
+        {
+            int minu = (int)AutoShutdown_S.Value;
+            int sec = minu * 60;
+            var confirmResult = MessageBox.Show("Do you really want to shut down you pc in " + minu + "minutes(" + sec + "seconds)?",
+                "Warning!!", MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes) {
+                vala = sec;
+                AutoShutdown.Enabled = true;
+                AutoShutdown_SL.Text = "none";
+                AutoShutdown_S.Enabled = false;
+                AutoShutdown_Start.Enabled = false;
+                AutoShutdown_progressBar.Maximum = vala;
+                AutoShutdown_progressBar.Value = vala;
+                AutoShutdown_Cancel.Enabled = true;
+                Log("AutoShutdown Started!");
+                //Process.Start("shutdown", "/s /t " + sec);
+            }
+
+        }
+        
+        private void AutoShutdown_Tick(object sender, EventArgs e)
+        {
+            vala--;
+            AutoShutdown_SL.Text = vala.ToString() + " Seconds(" + Math.Floor((double)vala / 60).ToString() + " Minutes)";
+            AutoShutdown_progressBar.Value = vala;
+            if (vala == 0)
+            {
+                AutoShutdown.Enabled = false;
+                Process.Start("shutdown", "/s /t 0");
+                Log("AutoShutdown!");
+            }
+        }
+
+        private void AutoShutdown_Cancel_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Do you really want to stop the AutoShutdown Process??",
+                "Warning!!", MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                AutoShutdown.Enabled = false;
+                vala = 0;
+                AutoShutdown_SL.Text = "none";
+                AutoShutdown_S.Enabled = true;
+                AutoShutdown_Start.Enabled = true;
+                AutoShutdown_progressBar.Maximum = 0;
+                AutoShutdown_progressBar.Value = 0;
+                AutoShutdown_Cancel.Enabled = false;
+                Log("AutoShutdown Stopped!");
+            }
+        }
+        bool rainbow = false;
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            label15.Visible = false;
+            if (rainbow == false)
+            {
+                pictureBox7.Image = Properties.Resources.AnimeGirl_Rainbow;
+                pictureBox7.Refresh();
+                rainbow = true;
+            }
+
+            else if(rainbow == true) {
+                pictureBox7.Image = Properties.Resources.AnimeGirl_Normal;
+                pictureBox7.Refresh();
+                rainbow = false;
+            }
+            
+        }
 
 
     }

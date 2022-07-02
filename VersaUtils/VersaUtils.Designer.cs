@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VersaUtils));
             this.Title = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.Main_Menu = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,10 +52,10 @@
             this.PCINFO_INFO_time = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.UpdateFrequency = new System.Windows.Forms.NumericUpDown();
             this.PCINFO_Active = new System.Windows.Forms.CheckBox();
             this.PCINFO_log = new System.Windows.Forms.CheckBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.StorageKiler = new System.Windows.Forms.TabPage();
             this.DeleteTempFiles_Button = new System.Windows.Forms.Button();
             this.Password_Gen = new System.Windows.Forms.TabPage();
@@ -74,6 +75,21 @@
             this.ScriptClicker_start_Button = new System.Windows.Forms.Button();
             this.ScriptClicker_save_Button = new System.Windows.Forms.Button();
             this.ScriptClicker_ScriptArea = new System.Windows.Forms.RichTextBox();
+            this.Fast_Options_Tab = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.VUFE = new System.Windows.Forms.TabPage();
+            this.Auto_Shutdown = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.AutoShutdown_SL = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.AutoShutdown_Cancel = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.AutoShutdown_S = new System.Windows.Forms.NumericUpDown();
+            this.AutoShutdown_Start = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.AutoShutdown_progressBar = new System.Windows.Forms.ProgressBar();
             this.Log_f = new System.Windows.Forms.TabPage();
             this.ClearLog_Button = new System.Windows.Forms.Button();
             this.SaveLog_Button = new System.Windows.Forms.Button();
@@ -82,19 +98,35 @@
             this.saveLog_SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.saveScriptClicker_script_SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.saveScriptClicker_script_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.AutoShutdown = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.VUFE_new = new System.Windows.Forms.Button();
+            this.VUFE_open = new System.Windows.Forms.Button();
+            this.VUFE_save = new System.Windows.Forms.Button();
+            this.VUFE_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.VUFE_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.VUFE_SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tabControl.SuspendLayout();
             this.Main_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.Pc_Info.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateFrequency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.StorageKiler.SuspendLayout();
             this.Password_Gen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordGen_Length)).BeginInit();
             this.ScriptClicker.SuspendLayout();
+            this.Fast_Options_Tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.VUFE.SuspendLayout();
+            this.Auto_Shutdown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AutoShutdown_S)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.Log_f.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -102,34 +134,13 @@
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.Snow;
-            this.Title.Location = new System.Drawing.Point(480, 20);
+            this.Title.Location = new System.Drawing.Point(459, 20);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(175, 33);
             this.Title.TabIndex = 1;
             this.Title.Text = "VersaUtils";
             this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Title.Click += new System.EventHandler(this.Title_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::VersaUtils.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(420, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VersaUtils.Properties.Resources.Line21;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(970, 10);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // tabControl
             // 
@@ -140,6 +151,9 @@
             this.tabControl.Controls.Add(this.Password_Gen);
             this.tabControl.Controls.Add(this.CamMic_Test);
             this.tabControl.Controls.Add(this.ScriptClicker);
+            this.tabControl.Controls.Add(this.Fast_Options_Tab);
+            this.tabControl.Controls.Add(this.VUFE);
+            this.tabControl.Controls.Add(this.Auto_Shutdown);
             this.tabControl.Controls.Add(this.Log_f);
             this.tabControl.Font = new System.Drawing.Font("Reem Kufi", 8.25F);
             this.tabControl.Location = new System.Drawing.Point(30, 100);
@@ -153,6 +167,9 @@
             // Main_Menu
             // 
             this.Main_Menu.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Main_Menu.Controls.Add(this.label15);
+            this.Main_Menu.Controls.Add(this.pictureBox7);
+            this.Main_Menu.Controls.Add(this.label9);
             this.Main_Menu.Controls.Add(this.pictureBox3);
             this.Main_Menu.Controls.Add(this.label3);
             this.Main_Menu.Controls.Add(this.label2);
@@ -163,10 +180,40 @@
             this.Main_Menu.TabIndex = 0;
             this.Main_Menu.Text = "Main Menu";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(445, 390);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 21);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Click on Me ↑";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::VersaUtils.Properties.Resources.AnimeGirl_Normal;
+            this.pictureBox7.Location = new System.Drawing.Point(301, 140);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(360, 250);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 7;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(587, 70);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 21);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Info";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::VersaUtils.Properties.Resources.logo2;
-            this.pictureBox3.Location = new System.Drawing.Point(360, 70);
+            this.pictureBox3.Location = new System.Drawing.Point(347, 70);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(60, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +225,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(430, 80);
+            this.label3.Location = new System.Drawing.Point(417, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(175, 33);
             this.label3.TabIndex = 4;
@@ -189,7 +236,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Source Code Pro", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(394, 30);
+            this.label2.Location = new System.Drawing.Point(381, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 34);
             this.label2.TabIndex = 0;
@@ -219,10 +266,10 @@
             this.Pc_Info.Controls.Add(this.PCINFO_INFO_time);
             this.Pc_Info.Controls.Add(this.label4);
             this.Pc_Info.Controls.Add(this.label1);
-            this.Pc_Info.Controls.Add(this.pictureBox4);
             this.Pc_Info.Controls.Add(this.UpdateFrequency);
             this.Pc_Info.Controls.Add(this.PCINFO_Active);
             this.Pc_Info.Controls.Add(this.PCINFO_log);
+            this.Pc_Info.Controls.Add(this.pictureBox4);
             this.Pc_Info.Location = new System.Drawing.Point(4, 33);
             this.Pc_Info.Name = "Pc_Info";
             this.Pc_Info.Size = new System.Drawing.Size(962, 653);
@@ -339,16 +386,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Update frequency(In ms):";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::VersaUtils.Properties.Resources.Line21;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(320, 10);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
             // UpdateFrequency
             // 
             this.UpdateFrequency.BackColor = System.Drawing.Color.LavenderBlush;
@@ -402,6 +439,16 @@
             this.PCINFO_log.TabIndex = 6;
             this.PCINFO_log.Text = "Log";
             this.PCINFO_log.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::VersaUtils.Properties.Resources.Line21;
+            this.pictureBox4.Location = new System.Drawing.Point(10, 60);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(320, 10);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
             // 
             // StorageKiler
             // 
@@ -627,6 +674,182 @@
             this.ScriptClicker_ScriptArea.TabIndex = 0;
             this.ScriptClicker_ScriptArea.Text = "";
             // 
+            // Fast_Options_Tab
+            // 
+            this.Fast_Options_Tab.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Fast_Options_Tab.Controls.Add(this.label11);
+            this.Fast_Options_Tab.Controls.Add(this.button1);
+            this.Fast_Options_Tab.Controls.Add(this.pictureBox5);
+            this.Fast_Options_Tab.Location = new System.Drawing.Point(4, 33);
+            this.Fast_Options_Tab.Name = "Fast_Options_Tab";
+            this.Fast_Options_Tab.Size = new System.Drawing.Size(962, 653);
+            this.Fast_Options_Tab.TabIndex = 7;
+            this.Fast_Options_Tab.Text = "Fast Options";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
+            this.label11.Location = new System.Drawing.Point(440, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 36);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "label11";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(40, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::VersaUtils.Properties.Resources.Line21;
+            this.pictureBox5.Location = new System.Drawing.Point(30, 100);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(900, 10);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // VUFE
+            // 
+            this.VUFE.BackColor = System.Drawing.Color.LavenderBlush;
+            this.VUFE.Controls.Add(this.VUFE_new);
+            this.VUFE.Controls.Add(this.VUFE_open);
+            this.VUFE.Controls.Add(this.VUFE_save);
+            this.VUFE.Controls.Add(this.VUFE_richTextBox);
+            this.VUFE.Location = new System.Drawing.Point(4, 33);
+            this.VUFE.Name = "VUFE";
+            this.VUFE.Size = new System.Drawing.Size(962, 653);
+            this.VUFE.TabIndex = 8;
+            this.VUFE.Text = "VUFEmini - File Editor";
+            // 
+            // Auto_Shutdown
+            // 
+            this.Auto_Shutdown.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Auto_Shutdown.Controls.Add(this.label14);
+            this.Auto_Shutdown.Controls.Add(this.AutoShutdown_SL);
+            this.Auto_Shutdown.Controls.Add(this.label12);
+            this.Auto_Shutdown.Controls.Add(this.AutoShutdown_Cancel);
+            this.Auto_Shutdown.Controls.Add(this.label13);
+            this.Auto_Shutdown.Controls.Add(this.AutoShutdown_S);
+            this.Auto_Shutdown.Controls.Add(this.AutoShutdown_Start);
+            this.Auto_Shutdown.Controls.Add(this.pictureBox6);
+            this.Auto_Shutdown.Controls.Add(this.AutoShutdown_progressBar);
+            this.Auto_Shutdown.Location = new System.Drawing.Point(4, 33);
+            this.Auto_Shutdown.Name = "Auto_Shutdown";
+            this.Auto_Shutdown.Size = new System.Drawing.Size(962, 653);
+            this.Auto_Shutdown.TabIndex = 9;
+            this.Auto_Shutdown.Text = "Auto Shutdown";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(840, 340);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 21);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "KYUUUT!!";
+            // 
+            // AutoShutdown_SL
+            // 
+            this.AutoShutdown_SL.AutoSize = true;
+            this.AutoShutdown_SL.Font = new System.Drawing.Font("Reem Kufi", 27.75F);
+            this.AutoShutdown_SL.Location = new System.Drawing.Point(450, 60);
+            this.AutoShutdown_SL.Name = "AutoShutdown_SL";
+            this.AutoShutdown_SL.Size = new System.Drawing.Size(111, 71);
+            this.AutoShutdown_SL.TabIndex = 7;
+            this.AutoShutdown_SL.Text = "none";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Reem Kufi", 27.75F);
+            this.label12.Location = new System.Drawing.Point(210, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(238, 71);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Shutdown in:";
+            // 
+            // AutoShutdown_Cancel
+            // 
+            this.AutoShutdown_Cancel.Enabled = false;
+            this.AutoShutdown_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AutoShutdown_Cancel.Location = new System.Drawing.Point(220, 270);
+            this.AutoShutdown_Cancel.Name = "AutoShutdown_Cancel";
+            this.AutoShutdown_Cancel.Size = new System.Drawing.Size(520, 120);
+            this.AutoShutdown_Cancel.TabIndex = 5;
+            this.AutoShutdown_Cancel.Text = "Cancel";
+            this.AutoShutdown_Cancel.UseVisualStyleBackColor = true;
+            this.AutoShutdown_Cancel.Click += new System.EventHandler(this.AutoShutdown_Cancel_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(220, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 21);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Minutes";
+            // 
+            // AutoShutdown_S
+            // 
+            this.AutoShutdown_S.BackColor = System.Drawing.Color.LavenderBlush;
+            this.AutoShutdown_S.Location = new System.Drawing.Point(280, 10);
+            this.AutoShutdown_S.Maximum = new decimal(new int[] {
+            1440,
+            0,
+            0,
+            0});
+            this.AutoShutdown_S.Name = "AutoShutdown_S";
+            this.AutoShutdown_S.Size = new System.Drawing.Size(70, 28);
+            this.AutoShutdown_S.TabIndex = 2;
+            this.AutoShutdown_S.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // AutoShutdown_Start
+            // 
+            this.AutoShutdown_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AutoShutdown_Start.Location = new System.Drawing.Point(220, 140);
+            this.AutoShutdown_Start.Name = "AutoShutdown_Start";
+            this.AutoShutdown_Start.Size = new System.Drawing.Size(520, 120);
+            this.AutoShutdown_Start.TabIndex = 0;
+            this.AutoShutdown_Start.Text = "Start";
+            this.AutoShutdown_Start.UseVisualStyleBackColor = true;
+            this.AutoShutdown_Start.Click += new System.EventHandler(this.AutoShutdown_Start_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::VersaUtils.Properties.Resources.animesher_com_pixel_dance_cute_1135879;
+            this.pictureBox6.Location = new System.Drawing.Point(830, 360);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 9;
+            this.pictureBox6.TabStop = false;
+            // 
+            // AutoShutdown_progressBar
+            // 
+            this.AutoShutdown_progressBar.BackColor = System.Drawing.Color.Lime;
+            this.AutoShutdown_progressBar.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.AutoShutdown_progressBar.Location = new System.Drawing.Point(30, 440);
+            this.AutoShutdown_progressBar.Maximum = 0;
+            this.AutoShutdown_progressBar.Name = "AutoShutdown_progressBar";
+            this.AutoShutdown_progressBar.Size = new System.Drawing.Size(910, 190);
+            this.AutoShutdown_progressBar.Step = 1;
+            this.AutoShutdown_progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.AutoShutdown_progressBar.TabIndex = 8;
+            // 
             // Log_f
             // 
             this.Log_f.BackColor = System.Drawing.Color.LavenderBlush;
@@ -688,6 +911,89 @@
             this.saveScriptClicker_script_SaveFileDialog.FileName = "script";
             this.saveScriptClicker_script_SaveFileDialog.Filter = "ScriptClicker Versa Utils File|*.scvu";
             // 
+            // AutoShutdown
+            // 
+            this.AutoShutdown.Interval = 1000;
+            this.AutoShutdown.Tick += new System.EventHandler(this.AutoShutdown_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::VersaUtils.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(399, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VersaUtils.Properties.Resources.Line21;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(970, 10);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // VUFE_new
+            // 
+            this.VUFE_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_new.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_new.Location = new System.Drawing.Point(170, 10);
+            this.VUFE_new.Name = "VUFE_new";
+            this.VUFE_new.Size = new System.Drawing.Size(75, 23);
+            this.VUFE_new.TabIndex = 9;
+            this.VUFE_new.Text = "New";
+            this.VUFE_new.UseVisualStyleBackColor = true;
+            this.VUFE_new.Click += new System.EventHandler(this.VUFE_new_Click);
+            // 
+            // VUFE_open
+            // 
+            this.VUFE_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_open.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_open.Location = new System.Drawing.Point(90, 10);
+            this.VUFE_open.Name = "VUFE_open";
+            this.VUFE_open.Size = new System.Drawing.Size(75, 23);
+            this.VUFE_open.TabIndex = 8;
+            this.VUFE_open.Text = "Open";
+            this.VUFE_open.UseVisualStyleBackColor = true;
+            this.VUFE_open.Click += new System.EventHandler(this.VUFE_open_Click);
+            // 
+            // VUFE_save
+            // 
+            this.VUFE_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_save.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_save.Location = new System.Drawing.Point(10, 10);
+            this.VUFE_save.Name = "VUFE_save";
+            this.VUFE_save.Size = new System.Drawing.Size(75, 23);
+            this.VUFE_save.TabIndex = 7;
+            this.VUFE_save.Text = "Save";
+            this.VUFE_save.UseVisualStyleBackColor = true;
+            this.VUFE_save.Click += new System.EventHandler(this.VUFE_save_Click);
+            // 
+            // VUFE_richTextBox
+            // 
+            this.VUFE_richTextBox.BackColor = System.Drawing.Color.LavenderBlush;
+            this.VUFE_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VUFE_richTextBox.Font = new System.Drawing.Font("Rubik", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_richTextBox.Location = new System.Drawing.Point(10, 40);
+            this.VUFE_richTextBox.Name = "VUFE_richTextBox";
+            this.VUFE_richTextBox.Size = new System.Drawing.Size(940, 580);
+            this.VUFE_richTextBox.TabIndex = 6;
+            this.VUFE_richTextBox.Text = "";
+            // 
+            // VUFE_OpenFileDialog
+            // 
+            this.VUFE_OpenFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
+    "g";
+            // 
+            // VUFE_SaveFileDialog
+            // 
+            this.VUFE_SaveFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
+    "g";
+            // 
             // VersaUtils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,22 +1010,31 @@
             this.Name = "VersaUtils";
             this.Opacity = 0.95D;
             this.Text = "VersaUtils";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.Main_Menu.ResumeLayout(false);
             this.Main_Menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.Pc_Info.ResumeLayout(false);
             this.Pc_Info.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateFrequency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.StorageKiler.ResumeLayout(false);
             this.Password_Gen.ResumeLayout(false);
             this.Password_Gen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordGen_Length)).EndInit();
             this.ScriptClicker.ResumeLayout(false);
+            this.Fast_Options_Tab.ResumeLayout(false);
+            this.Fast_Options_Tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.VUFE.ResumeLayout(false);
+            this.Auto_Shutdown.ResumeLayout(false);
+            this.Auto_Shutdown.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AutoShutdown_S)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.Log_f.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,6 +1094,31 @@
         private System.Windows.Forms.Label PCINFO_INFO_freespace;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabPage Fast_Options_Tab;
+        private System.Windows.Forms.TabPage VUFE;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TabPage Auto_Shutdown;
+        private System.Windows.Forms.NumericUpDown AutoShutdown_S;
+        private System.Windows.Forms.Button AutoShutdown_Start;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button AutoShutdown_Cancel;
+        private System.Windows.Forms.Timer AutoShutdown;
+        private System.Windows.Forms.Label AutoShutdown_SL;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ProgressBar AutoShutdown_progressBar;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button VUFE_new;
+        private System.Windows.Forms.Button VUFE_open;
+        private System.Windows.Forms.Button VUFE_save;
+        private System.Windows.Forms.RichTextBox VUFE_richTextBox;
+        private System.Windows.Forms.OpenFileDialog VUFE_OpenFileDialog;
+        private System.Windows.Forms.SaveFileDialog VUFE_SaveFileDialog;
     }
 }
 
