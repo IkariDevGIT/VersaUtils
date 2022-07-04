@@ -18,6 +18,9 @@ namespace VersaUtils
 {
     public partial class VersaUtils : Form
     {
+        public String VersaFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\VersaUtils";
+        public String VersaConfig = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\VersaUtils\Config.txt";
+        public Boolean DontActivate = true;
 
         public VersaUtils()
         {
@@ -28,7 +31,53 @@ namespace VersaUtils
             label10.Visible = false;
             //AutoShutdown_progressBar.ForeColor(Color.Brown);
             // AutoShutdown_progressBar.BackColor(Color.Brown);
+            if (Environment.UserName.ToString() == "einea")
+            {
+            StorageKiller_ClearDownloadFolder_Button.Enabled = false;
+            }
+            //Log(Environment.UserName.ToString());
+            /*
+            Log(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
+
+            System.IO.Directory.CreateDirectory(VersaFolder);
+            if (!File.Exists(VersaConfig))
+            {
+                File.WriteAllText(VersaConfig, String.Empty);
+            }
+            */
             
+             EnableAnimeGirls.Checked = Settings.Default.EnableAnimeGirlsSetting;
+             DontActivate = false;
+             Vis(pictureBox6, Settings.Default.EnableAnimeGirlsSetting);
+             Vis(pictureBox7, Settings.Default.EnableAnimeGirlsSetting);
+             Vis(pictureBox8, Settings.Default.EnableAnimeGirlsSetting);
+             label14.Visible = Settings.Default.EnableAnimeGirlsSetting;
+             label15.Visible = Settings.Default.EnableAnimeGirlsSetting;
+
+
+
+
+
+
+        }
+
+        private void DisableAnimeGirls_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DontActivate == false)
+            {
+                if (EnableAnimeGirls.Checked)
+                {
+                    Settings.Default.EnableAnimeGirlsSetting = true;
+                    Settings.Default.Save();
+                    MessageBox.Show("Restart to apply settings!");
+                }
+                else
+                {
+                    Settings.Default.EnableAnimeGirlsSetting = false;
+                    Settings.Default.Save();
+                    MessageBox.Show("Restart to apply settings!");
+                }
+            }
 
 
         }
@@ -83,6 +132,94 @@ namespace VersaUtils
         private void InfoWindow()
         {
             MessageBox.Show("Made with ❤ by ikaridev.\n\n ////Help////\nlol", "Info");
+        }
+
+        private void ClearRecycleBin()
+        {
+            var confirmResult = MessageBox.Show("Are you sure to delete all recycle bin files?",
+                                   "Delete!",
+                                   MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Log("Deleting recycle bin Files...");
+
+                try
+                {
+                    // Execute the method with the required parameters
+                    uint IsSuccess = SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHRB_NOCONFIRMATION);
+                    MessageBox.Show("The recycle bin has been succesfully recycled !", "Clear recycle bin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Log("The recycle bin has been succesfully recycled!");
+                }
+                catch (Exception error)
+                {
+                    Log(@"The recycle bin couldn't be recycled");
+                    //Log("ERROR: " + error);
+                }
+
+                //Log("Temp Files were deleted!");
+
+            }
+        }
+
+        private void DeleteTempFiles()
+        {
+            var confirmResult = MessageBox.Show("Are you sure to delete all temp files?",
+                                    "Delete!",
+                                    MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Log("Deleting Temp Files...");
+                string userName = Environment.UserName;
+                var dir = new DirectoryInfo("C:\\Users\\" + userName + "\\AppData\\Local\\Temp");
+                var d = new DirectoryInfo("C:\\Windows\\Temp");
+
+
+                foreach (var file in Directory.GetFiles(dir.ToString()))
+                {
+
+                    try
+                    {
+                        File.Delete(file);
+                        Log("Deleted file: " + file);
+                    }
+                    catch (Exception error)
+                    {
+                        Log("Could not delete file: " + file + " - Maybe its already in use by another program!");
+                        //Log("ERROR: " + error);
+                    }
+                }
+
+
+                foreach (var file in Directory.GetFiles(d.ToString()))
+                {
+
+                    try
+                    {
+                        File.Delete(file);
+                        Log("Deleted file: " + file);
+                    }
+                    catch (Exception error)
+                    {
+                        Log("Could not delete file: " + file + " - Maybe its already in use by another program!");
+                        //Log("ERROR: " + error);
+                    }
+                }
+                Log("Temp Files were deleted!");
+
+            }
+        }
+
+        private void Vis(PictureBox pic, Boolean bol)
+        {
+            if (bol == true)
+            {
+                pic.Enabled = true; pic.Visible = true;
+            }
+            else
+            {
+                pic.Enabled = false; pic.Visible = false;
+            }
+
         }
 
 
@@ -183,51 +320,7 @@ namespace VersaUtils
 
         private void DeleteTempFiles_Button_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure to delete all temp files?",
-                                     "Delete!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                Log("Deleting Temp Files...");
-                string userName = Environment.UserName;
-                var dir = new DirectoryInfo("C:\\Users\\" + userName + "\\AppData\\Local\\Temp");
-                var d = new DirectoryInfo("C:\\Windows\\Temp");
-
-
-                foreach (var file in Directory.GetFiles(dir.ToString()))
-                {
-
-                    try
-                    {
-                        File.Delete(file);
-                        Log("Deleted file: " + file);
-                    }
-                    catch (Exception error)
-                    {
-                        Log("Could not delete file: " + file + " - Maybe its already in use by another program!");
-                        //Log("ERROR: " + error);
-                    }
-                }
-
-
-                foreach (var file in Directory.GetFiles(d.ToString()))
-                {
-
-                    try
-                    {
-                        File.Delete(file);
-                        Log("Deleted file: " + file);
-                    }
-                    catch (Exception error)
-                    {
-                        Log("Could not delete file: " + file + " - Maybe its already in use by another program!");
-                        //Log("ERROR: " + error);
-                    }
-                }
-                Log("Temp Files were deleted!");
-
-            }
-
+            DeleteTempFiles();
         }
 
         void PasswordGen_Gen()
@@ -535,34 +628,55 @@ namespace VersaUtils
 
         private void StorageKiller_ClearRecycleBin_Button_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure to delete all recycle bin files?",
-                                    "Delete!",
-                                    MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                Log("Deleting recycle bin Files...");
-
-                try
-                {
-                    // Execute the method with the required parameters
-                    uint IsSuccess = SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHRB_NOCONFIRMATION);
-                    MessageBox.Show("The recycle bin has been succesfully recycled !", "Clear recycle bin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Log("The recycle bin has been succesfully recycled!");
-                }
-                catch (Exception error)
-                    {
-                        Log(@"The recycle bin couldn't be recycled");
-                        //Log("ERROR: " + error);
-                    }
-                
-                //Log("Temp Files were deleted!");
-
-            }
+            ClearRecycleBin();
         }
 
         private void StorageKiller_ClearDownloadFolder_Button_Click(object sender, EventArgs e)
         {
+            var confirmResult = MessageBox.Show("Are you sure to delete all files in the download folder?",
+                                    "Delete!",
+                                    MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
 
+                var confirmResult2 = MessageBox.Show("All the files will be deleted forever and cannot be saved. ARE YOU SURE YOU WANT TO DELETE ALL FILES IN THE DOWNLOAD FOLDER??",
+                                        "WARNING!!!",
+                                        MessageBoxButtons.YesNo);
+                if (confirmResult2 == DialogResult.Yes)
+                {
+                    Log("Deleting Download Files...");
+                    string userName = Environment.UserName;
+                    var dir = new DirectoryInfo("C:\\Users\\" + userName + "\\Downloads");
+
+
+                    foreach (var file in Directory.GetFiles(dir.ToString()))
+                    {
+
+                        try
+                        {
+                            File.Delete(file);
+                            Log("Deleted file: " + file);
+                        }
+                        catch (Exception error)
+                        {
+                            Log("Could not delete file: " + file + " - Maybe its already in use by another program!");
+                            //Log("ERROR: " + error);
+                        }
+                    }
+
+                    Log("Download Files were deleted!");
+                }
+
+            }
         }
+
+        private void StorageKiller_DeleteAllJunkFiles_Button_Click(object sender, EventArgs e)
+        {
+            DeleteTempFiles();
+            ClearRecycleBin();
+        }
+
+
+        
     }
 }

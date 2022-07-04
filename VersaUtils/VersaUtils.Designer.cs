@@ -34,9 +34,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.Main_Menu = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DevMode_CheckBox = new System.Windows.Forms.CheckBox();
@@ -55,9 +53,8 @@
             this.UpdateFrequency = new System.Windows.Forms.NumericUpDown();
             this.PCINFO_Active = new System.Windows.Forms.CheckBox();
             this.PCINFO_log = new System.Windows.Forms.CheckBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.StorageKiler = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
+            this.StorageKiller_DeleteAllJunkFiles_Button = new System.Windows.Forms.Button();
             this.StorageKiller_ClearRecycleBin_Button = new System.Windows.Forms.Button();
             this.StorageKiller_ClearDownloadFolder_Button = new System.Windows.Forms.Button();
             this.StorageKiller_DeleteTempFiles_Button = new System.Windows.Forms.Button();
@@ -81,7 +78,6 @@
             this.Fast_Options_Tab = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.VUFE = new System.Windows.Forms.TabPage();
             this.VUFE_new = new System.Windows.Forms.Button();
             this.VUFE_open = new System.Windows.Forms.Button();
@@ -95,7 +91,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.AutoShutdown_S = new System.Windows.Forms.NumericUpDown();
             this.AutoShutdown_Start = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.AutoShutdown_progressBar = new System.Windows.Forms.ProgressBar();
             this.Log_f = new System.Windows.Forms.TabPage();
             this.ClearLog_Button = new System.Windows.Forms.Button();
@@ -106,29 +101,39 @@
             this.saveScriptClicker_script_SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.saveScriptClicker_script_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.AutoShutdown = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.VUFE_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.VUFE_SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ProgramTick = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.EnableAnimeGirls = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.Main_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.Pc_Info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateFrequency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.StorageKiler.SuspendLayout();
             this.Password_Gen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordGen_Length)).BeginInit();
             this.ScriptClicker.SuspendLayout();
             this.Fast_Options_Tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.VUFE.SuspendLayout();
             this.Auto_Shutdown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AutoShutdown_S)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.Log_f.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +176,7 @@
             // Main_Menu
             // 
             this.Main_Menu.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Main_Menu.Controls.Add(this.EnableAnimeGirls);
             this.Main_Menu.Controls.Add(this.label15);
             this.Main_Menu.Controls.Add(this.pictureBox7);
             this.Main_Menu.Controls.Add(this.label9);
@@ -193,17 +199,6 @@
             this.label15.TabIndex = 8;
             this.label15.Text = "Click on Me ↑";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::VersaUtils.Properties.Resources.AnimeGirl_Normal;
-            this.pictureBox7.Location = new System.Drawing.Point(301, 140);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(360, 250);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 7;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -213,16 +208,6 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Info";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::VersaUtils.Properties.Resources.logo2;
-            this.pictureBox3.Location = new System.Drawing.Point(347, 70);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
             // 
             // label3
             // 
@@ -444,45 +429,35 @@
             this.PCINFO_log.Text = "Log";
             this.PCINFO_log.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::VersaUtils.Properties.Resources.Line21;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(320, 10);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
             // StorageKiler
             // 
             this.StorageKiler.BackColor = System.Drawing.Color.LavenderBlush;
-            this.StorageKiler.Controls.Add(this.button6);
-            this.StorageKiler.Controls.Add(this.StorageKiller_ClearRecycleBin_Button);
+            this.StorageKiler.Controls.Add(this.groupBox1);
             this.StorageKiler.Controls.Add(this.StorageKiller_ClearDownloadFolder_Button);
-            this.StorageKiler.Controls.Add(this.StorageKiller_DeleteTempFiles_Button);
+            this.StorageKiler.Controls.Add(this.pictureBox8);
             this.StorageKiler.Location = new System.Drawing.Point(4, 33);
             this.StorageKiler.Name = "StorageKiler";
             this.StorageKiler.Size = new System.Drawing.Size(962, 653);
             this.StorageKiler.TabIndex = 3;
             this.StorageKiler.Text = "StorageKiler";
             // 
-            // button6
+            // StorageKiller_DeleteAllJunkFiles_Button
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
-            this.button6.Location = new System.Drawing.Point(200, 20);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(560, 140);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Delete All junk files";
-            this.button6.UseVisualStyleBackColor = true;
+            this.StorageKiller_DeleteAllJunkFiles_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StorageKiller_DeleteAllJunkFiles_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
+            this.StorageKiller_DeleteAllJunkFiles_Button.Location = new System.Drawing.Point(20, 30);
+            this.StorageKiller_DeleteAllJunkFiles_Button.Name = "StorageKiller_DeleteAllJunkFiles_Button";
+            this.StorageKiller_DeleteAllJunkFiles_Button.Size = new System.Drawing.Size(560, 140);
+            this.StorageKiller_DeleteAllJunkFiles_Button.TabIndex = 5;
+            this.StorageKiller_DeleteAllJunkFiles_Button.Text = "Delete All junk files";
+            this.StorageKiller_DeleteAllJunkFiles_Button.UseVisualStyleBackColor = true;
+            this.StorageKiller_DeleteAllJunkFiles_Button.Click += new System.EventHandler(this.StorageKiller_DeleteAllJunkFiles_Button_Click);
             // 
             // StorageKiller_ClearRecycleBin_Button
             // 
             this.StorageKiller_ClearRecycleBin_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StorageKiller_ClearRecycleBin_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
-            this.StorageKiller_ClearRecycleBin_Button.Location = new System.Drawing.Point(390, 180);
+            this.StorageKiller_ClearRecycleBin_Button.Location = new System.Drawing.Point(210, 190);
             this.StorageKiller_ClearRecycleBin_Button.Name = "StorageKiller_ClearRecycleBin_Button";
             this.StorageKiller_ClearRecycleBin_Button.Size = new System.Drawing.Size(180, 140);
             this.StorageKiller_ClearRecycleBin_Button.TabIndex = 2;
@@ -494,7 +469,7 @@
             // 
             this.StorageKiller_ClearDownloadFolder_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StorageKiller_ClearDownloadFolder_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
-            this.StorageKiller_ClearDownloadFolder_Button.Location = new System.Drawing.Point(200, 180);
+            this.StorageKiller_ClearDownloadFolder_Button.Location = new System.Drawing.Point(60, 20);
             this.StorageKiller_ClearDownloadFolder_Button.Name = "StorageKiller_ClearDownloadFolder_Button";
             this.StorageKiller_ClearDownloadFolder_Button.Size = new System.Drawing.Size(180, 140);
             this.StorageKiller_ClearDownloadFolder_Button.TabIndex = 1;
@@ -506,7 +481,7 @@
             // 
             this.StorageKiller_DeleteTempFiles_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StorageKiller_DeleteTempFiles_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
-            this.StorageKiller_DeleteTempFiles_Button.Location = new System.Drawing.Point(580, 180);
+            this.StorageKiller_DeleteTempFiles_Button.Location = new System.Drawing.Point(400, 190);
             this.StorageKiller_DeleteTempFiles_Button.Name = "StorageKiller_DeleteTempFiles_Button";
             this.StorageKiller_DeleteTempFiles_Button.Size = new System.Drawing.Size(180, 140);
             this.StorageKiller_DeleteTempFiles_Button.TabIndex = 0;
@@ -750,16 +725,6 @@
             this.button1.Text = "Clean Desktop";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::VersaUtils.Properties.Resources.Line21;
-            this.pictureBox5.Location = new System.Drawing.Point(30, 100);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(900, 10);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
             // VUFE
             // 
             this.VUFE.BackColor = System.Drawing.Color.LavenderBlush;
@@ -830,8 +795,8 @@
             this.Auto_Shutdown.Controls.Add(this.label13);
             this.Auto_Shutdown.Controls.Add(this.AutoShutdown_S);
             this.Auto_Shutdown.Controls.Add(this.AutoShutdown_Start);
-            this.Auto_Shutdown.Controls.Add(this.pictureBox6);
             this.Auto_Shutdown.Controls.Add(this.AutoShutdown_progressBar);
+            this.Auto_Shutdown.Controls.Add(this.pictureBox6);
             this.Auto_Shutdown.Location = new System.Drawing.Point(4, 33);
             this.Auto_Shutdown.Name = "Auto_Shutdown";
             this.Auto_Shutdown.Size = new System.Drawing.Size(962, 653);
@@ -917,16 +882,6 @@
             this.AutoShutdown_Start.UseVisualStyleBackColor = true;
             this.AutoShutdown_Start.Click += new System.EventHandler(this.AutoShutdown_Start_Click);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::VersaUtils.Properties.Resources.animesher_com_pixel_dance_cute_1135879;
-            this.pictureBox6.Location = new System.Drawing.Point(830, 360);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
-            // 
             // AutoShutdown_progressBar
             // 
             this.AutoShutdown_progressBar.BackColor = System.Drawing.Color.Lime;
@@ -1005,6 +960,94 @@
             this.AutoShutdown.Interval = 1000;
             this.AutoShutdown.Tick += new System.EventHandler(this.AutoShutdown_Tick);
             // 
+            // VUFE_OpenFileDialog
+            // 
+            this.VUFE_OpenFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
+    "g";
+            // 
+            // VUFE_SaveFileDialog
+            // 
+            this.VUFE_SaveFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
+    "g";
+            // 
+            // ProgramTick
+            // 
+            this.ProgramTick.Interval = 30;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
+            this.groupBox1.Controls.Add(this.StorageKiller_ClearRecycleBin_Button);
+            this.groupBox1.Controls.Add(this.StorageKiller_DeleteAllJunkFiles_Button);
+            this.groupBox1.Controls.Add(this.StorageKiller_DeleteTempFiles_Button);
+            this.groupBox1.Location = new System.Drawing.Point(270, 20);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(670, 410);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Junk Files";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::VersaUtils.Properties.Resources.AnimeGirl_Normal;
+            this.pictureBox7.Location = new System.Drawing.Point(301, 140);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(360, 250);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 7;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::VersaUtils.Properties.Resources.logo2;
+            this.pictureBox3.Location = new System.Drawing.Point(347, 70);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::VersaUtils.Properties.Resources.Line21;
+            this.pictureBox4.Location = new System.Drawing.Point(10, 60);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(320, 10);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::VersaUtils.Properties.Resources._43c3d78afed80c2c68240e622437d81e;
+            this.pictureBox8.Location = new System.Drawing.Point(-30, 230);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(290, 550);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 7;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::VersaUtils.Properties.Resources.Line21;
+            this.pictureBox5.Location = new System.Drawing.Point(30, 100);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(900, 10);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::VersaUtils.Properties.Resources.animesher_com_pixel_dance_cute_1135879;
+            this.pictureBox6.Location = new System.Drawing.Point(830, 360);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 9;
+            this.pictureBox6.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::VersaUtils.Properties.Resources.logo2;
@@ -1026,19 +1069,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // VUFE_OpenFileDialog
+            // EnableAnimeGirls
             // 
-            this.VUFE_OpenFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
-    "g";
-            // 
-            // VUFE_SaveFileDialog
-            // 
-            this.VUFE_SaveFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
-    "g";
-            // 
-            // ProgramTick
-            // 
-            this.ProgramTick.Interval = 30;
+            this.EnableAnimeGirls.AutoSize = true;
+            this.EnableAnimeGirls.Location = new System.Drawing.Point(20, 10);
+            this.EnableAnimeGirls.Name = "EnableAnimeGirls";
+            this.EnableAnimeGirls.Size = new System.Drawing.Size(122, 25);
+            this.EnableAnimeGirls.TabIndex = 9;
+            this.EnableAnimeGirls.Text = "Enable Anime Girls";
+            this.EnableAnimeGirls.UseVisualStyleBackColor = true;
+            this.EnableAnimeGirls.CheckedChanged += new System.EventHandler(this.DisableAnimeGirls_CheckedChanged);
             // 
             // VersaUtils
             // 
@@ -1059,12 +1099,9 @@
             this.tabControl.ResumeLayout(false);
             this.Main_Menu.ResumeLayout(false);
             this.Main_Menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.Pc_Info.ResumeLayout(false);
             this.Pc_Info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateFrequency)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.StorageKiler.ResumeLayout(false);
             this.Password_Gen.ResumeLayout(false);
             this.Password_Gen.PerformLayout();
@@ -1072,13 +1109,18 @@
             this.ScriptClicker.ResumeLayout(false);
             this.Fast_Options_Tab.ResumeLayout(false);
             this.Fast_Options_Tab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.VUFE.ResumeLayout(false);
             this.Auto_Shutdown.ResumeLayout(false);
             this.Auto_Shutdown.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AutoShutdown_S)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.Log_f.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1166,9 +1208,12 @@
         private System.Windows.Forms.OpenFileDialog VUFE_OpenFileDialog;
         private System.Windows.Forms.SaveFileDialog VUFE_SaveFileDialog;
         private System.Windows.Forms.Timer ProgramTick;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button StorageKiller_DeleteAllJunkFiles_Button;
         private System.Windows.Forms.Button StorageKiller_ClearRecycleBin_Button;
         private System.Windows.Forms.Button StorageKiller_ClearDownloadFolder_Button;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.CheckBox EnableAnimeGirls;
     }
 }
 

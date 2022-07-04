@@ -63,6 +63,16 @@ namespace VersaUtils.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _43c3d78afed80c2c68240e622437d81e {
+            get {
+                object obj = ResourceManager.GetObject("43c3d78afed80c2c68240e622437d81e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AnimeGirl_Normal {
             get {
                 object obj = ResourceManager.GetObject("AnimeGirl_Normal", resourceCulture);
