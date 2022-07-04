@@ -676,7 +676,23 @@ namespace VersaUtils
             ClearRecycleBin();
         }
 
+        private void VersaUtils_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (AutoShutdown.Enabled)
+            {
+                var confirmResult2 = MessageBox.Show("Auto shutdown is active, do you really wanna quit the application?", "WARNING!!!", MessageBoxButtons.YesNo);
+                if (confirmResult2 == DialogResult.Yes)
+                { Application.ExitThread(); }
+                else { e.Cancel = true; }
+            }
+            if(VUFE_richTextBox.TextLength != 0){
+                var confirmResult2 = MessageBox.Show("Your VUFE document isn´t saved, do you really wanna quit the application?", "WARNING!!!", MessageBoxButtons.YesNo);
+                if (confirmResult2 == DialogResult.Yes)
+                { Application.ExitThread(); }
+                else { e.Cancel = true; }
+            }
 
-        
+
+        }
     }
 }

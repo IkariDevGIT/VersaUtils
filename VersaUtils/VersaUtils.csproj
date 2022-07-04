@@ -129,6 +129,7 @@
     <None Include="Resources\logo2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChangeLog.txt" />
     <Content Include="logo2.ico" />
     <None Include="Resources\43c3d78afed80c2c68240e622437d81e.gif" />
     <None Include="Resources\ezgif-1-15be8251eb.gif" />

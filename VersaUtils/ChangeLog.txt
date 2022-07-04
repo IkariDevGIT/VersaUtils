@@ -1,0 +1,1 @@
+﻿added - abfrage auf beenden der applikation wenn autoshutdown aktiv ist oder der VUFE text nicht gespeichert ist.
