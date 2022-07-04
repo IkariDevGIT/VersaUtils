@@ -12,7 +12,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 
 namespace VersaUtils
 {
@@ -27,9 +27,17 @@ namespace VersaUtils
             label8.Visible = false;
             label10.Visible = false;
             //AutoShutdown_progressBar.ForeColor(Color.Brown);
-           // AutoShutdown_progressBar.BackColor(Color.Brown);
+            // AutoShutdown_progressBar.BackColor(Color.Brown);
+            
 
 
+        }
+
+        enum RecycleFlags : uint
+        {
+            SHRB_NOCONFIRMATION = 0x00000001, // Don't ask confirmation
+            SHRB_NOPROGRESSUI = 0x00000002, // Don't show any windows dialog
+            SHRB_NOSOUND = 0x00000004 // Don't make sound, ninja mode enabled :v
         }
 
         void Log(string str)
@@ -39,6 +47,8 @@ namespace VersaUtils
             log_text.ScrollToCaret();
 
         }
+        [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
+        static extern uint SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
 
         public static string GetLocalIPAddress()
         {
@@ -523,6 +533,36 @@ namespace VersaUtils
             
         }
 
+        private void StorageKiller_ClearRecycleBin_Button_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure to delete all recycle bin files?",
+                                    "Delete!",
+                                    MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Log("Deleting recycle bin Files...");
 
+                try
+                {
+                    // Execute the method with the required parameters
+                    uint IsSuccess = SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHRB_NOCONFIRMATION);
+                    MessageBox.Show("The recycle bin has been succesfully recycled !", "Clear recycle bin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Log("The recycle bin has been succesfully recycled!");
+                }
+                catch (Exception error)
+                    {
+                        Log(@"The recycle bin couldn't be recycled");
+                        //Log("ERROR: " + error);
+                    }
+                
+                //Log("Temp Files were deleted!");
+
+            }
+        }
+
+        private void StorageKiller_ClearDownloadFolder_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

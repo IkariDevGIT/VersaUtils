@@ -57,7 +57,10 @@
             this.PCINFO_log = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.StorageKiler = new System.Windows.Forms.TabPage();
-            this.DeleteTempFiles_Button = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.StorageKiller_ClearRecycleBin_Button = new System.Windows.Forms.Button();
+            this.StorageKiller_ClearDownloadFolder_Button = new System.Windows.Forms.Button();
+            this.StorageKiller_DeleteTempFiles_Button = new System.Windows.Forms.Button();
             this.Password_Gen = new System.Windows.Forms.TabPage();
             this.PasswordGen_OutputField = new System.Windows.Forms.RichTextBox();
             this.PasswordGen_h_symbols = new System.Windows.Forms.CheckBox();
@@ -80,6 +83,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.VUFE = new System.Windows.Forms.TabPage();
+            this.VUFE_new = new System.Windows.Forms.Button();
+            this.VUFE_open = new System.Windows.Forms.Button();
+            this.VUFE_save = new System.Windows.Forms.Button();
+            this.VUFE_richTextBox = new System.Windows.Forms.RichTextBox();
             this.Auto_Shutdown = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.AutoShutdown_SL = new System.Windows.Forms.Label();
@@ -101,12 +108,9 @@
             this.AutoShutdown = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.VUFE_new = new System.Windows.Forms.Button();
-            this.VUFE_open = new System.Windows.Forms.Button();
-            this.VUFE_save = new System.Windows.Forms.Button();
-            this.VUFE_richTextBox = new System.Windows.Forms.RichTextBox();
             this.VUFE_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.VUFE_SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ProgramTick = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.Main_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -453,24 +457,62 @@
             // StorageKiler
             // 
             this.StorageKiler.BackColor = System.Drawing.Color.LavenderBlush;
-            this.StorageKiler.Controls.Add(this.DeleteTempFiles_Button);
+            this.StorageKiler.Controls.Add(this.button6);
+            this.StorageKiler.Controls.Add(this.StorageKiller_ClearRecycleBin_Button);
+            this.StorageKiler.Controls.Add(this.StorageKiller_ClearDownloadFolder_Button);
+            this.StorageKiler.Controls.Add(this.StorageKiller_DeleteTempFiles_Button);
             this.StorageKiler.Location = new System.Drawing.Point(4, 33);
             this.StorageKiler.Name = "StorageKiler";
             this.StorageKiler.Size = new System.Drawing.Size(962, 653);
             this.StorageKiler.TabIndex = 3;
             this.StorageKiler.Text = "StorageKiler";
             // 
-            // DeleteTempFiles_Button
+            // button6
             // 
-            this.DeleteTempFiles_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteTempFiles_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
-            this.DeleteTempFiles_Button.Location = new System.Drawing.Point(20, 20);
-            this.DeleteTempFiles_Button.Name = "DeleteTempFiles_Button";
-            this.DeleteTempFiles_Button.Size = new System.Drawing.Size(180, 140);
-            this.DeleteTempFiles_Button.TabIndex = 0;
-            this.DeleteTempFiles_Button.Text = "Delete Temp files";
-            this.DeleteTempFiles_Button.UseVisualStyleBackColor = true;
-            this.DeleteTempFiles_Button.Click += new System.EventHandler(this.DeleteTempFiles_Button_Click);
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
+            this.button6.Location = new System.Drawing.Point(200, 20);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(560, 140);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Delete All junk files";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // StorageKiller_ClearRecycleBin_Button
+            // 
+            this.StorageKiller_ClearRecycleBin_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StorageKiller_ClearRecycleBin_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
+            this.StorageKiller_ClearRecycleBin_Button.Location = new System.Drawing.Point(390, 180);
+            this.StorageKiller_ClearRecycleBin_Button.Name = "StorageKiller_ClearRecycleBin_Button";
+            this.StorageKiller_ClearRecycleBin_Button.Size = new System.Drawing.Size(180, 140);
+            this.StorageKiller_ClearRecycleBin_Button.TabIndex = 2;
+            this.StorageKiller_ClearRecycleBin_Button.Text = "Clear RecycleBin ";
+            this.StorageKiller_ClearRecycleBin_Button.UseVisualStyleBackColor = true;
+            this.StorageKiller_ClearRecycleBin_Button.Click += new System.EventHandler(this.StorageKiller_ClearRecycleBin_Button_Click);
+            // 
+            // StorageKiller_ClearDownloadFolder_Button
+            // 
+            this.StorageKiller_ClearDownloadFolder_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StorageKiller_ClearDownloadFolder_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
+            this.StorageKiller_ClearDownloadFolder_Button.Location = new System.Drawing.Point(200, 180);
+            this.StorageKiller_ClearDownloadFolder_Button.Name = "StorageKiller_ClearDownloadFolder_Button";
+            this.StorageKiller_ClearDownloadFolder_Button.Size = new System.Drawing.Size(180, 140);
+            this.StorageKiller_ClearDownloadFolder_Button.TabIndex = 1;
+            this.StorageKiller_ClearDownloadFolder_Button.Text = "Clear Download folder";
+            this.StorageKiller_ClearDownloadFolder_Button.UseVisualStyleBackColor = true;
+            this.StorageKiller_ClearDownloadFolder_Button.Click += new System.EventHandler(this.StorageKiller_ClearDownloadFolder_Button_Click);
+            // 
+            // StorageKiller_DeleteTempFiles_Button
+            // 
+            this.StorageKiller_DeleteTempFiles_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StorageKiller_DeleteTempFiles_Button.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
+            this.StorageKiller_DeleteTempFiles_Button.Location = new System.Drawing.Point(580, 180);
+            this.StorageKiller_DeleteTempFiles_Button.Name = "StorageKiller_DeleteTempFiles_Button";
+            this.StorageKiller_DeleteTempFiles_Button.Size = new System.Drawing.Size(180, 140);
+            this.StorageKiller_DeleteTempFiles_Button.TabIndex = 0;
+            this.StorageKiller_DeleteTempFiles_Button.Text = "Delete Temp files";
+            this.StorageKiller_DeleteTempFiles_Button.UseVisualStyleBackColor = true;
+            this.StorageKiller_DeleteTempFiles_Button.Click += new System.EventHandler(this.DeleteTempFiles_Button_Click);
             // 
             // Password_Gen
             // 
@@ -705,7 +747,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 40);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Clean Desktop";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox5
@@ -730,6 +772,53 @@
             this.VUFE.Size = new System.Drawing.Size(962, 653);
             this.VUFE.TabIndex = 8;
             this.VUFE.Text = "VUFEmini - File Editor";
+            // 
+            // VUFE_new
+            // 
+            this.VUFE_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_new.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_new.Location = new System.Drawing.Point(170, 10);
+            this.VUFE_new.Name = "VUFE_new";
+            this.VUFE_new.Size = new System.Drawing.Size(75, 23);
+            this.VUFE_new.TabIndex = 9;
+            this.VUFE_new.Text = "New";
+            this.VUFE_new.UseVisualStyleBackColor = true;
+            this.VUFE_new.Click += new System.EventHandler(this.VUFE_new_Click);
+            // 
+            // VUFE_open
+            // 
+            this.VUFE_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_open.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_open.Location = new System.Drawing.Point(90, 10);
+            this.VUFE_open.Name = "VUFE_open";
+            this.VUFE_open.Size = new System.Drawing.Size(75, 23);
+            this.VUFE_open.TabIndex = 8;
+            this.VUFE_open.Text = "Open";
+            this.VUFE_open.UseVisualStyleBackColor = true;
+            this.VUFE_open.Click += new System.EventHandler(this.VUFE_open_Click);
+            // 
+            // VUFE_save
+            // 
+            this.VUFE_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_save.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_save.Location = new System.Drawing.Point(10, 10);
+            this.VUFE_save.Name = "VUFE_save";
+            this.VUFE_save.Size = new System.Drawing.Size(75, 23);
+            this.VUFE_save.TabIndex = 7;
+            this.VUFE_save.Text = "Save";
+            this.VUFE_save.UseVisualStyleBackColor = true;
+            this.VUFE_save.Click += new System.EventHandler(this.VUFE_save_Click);
+            // 
+            // VUFE_richTextBox
+            // 
+            this.VUFE_richTextBox.BackColor = System.Drawing.Color.LavenderBlush;
+            this.VUFE_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VUFE_richTextBox.Font = new System.Drawing.Font("Rubik", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_richTextBox.Location = new System.Drawing.Point(10, 40);
+            this.VUFE_richTextBox.Name = "VUFE_richTextBox";
+            this.VUFE_richTextBox.Size = new System.Drawing.Size(940, 580);
+            this.VUFE_richTextBox.TabIndex = 6;
+            this.VUFE_richTextBox.Text = "";
             // 
             // Auto_Shutdown
             // 
@@ -937,53 +1026,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // VUFE_new
-            // 
-            this.VUFE_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VUFE_new.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUFE_new.Location = new System.Drawing.Point(170, 10);
-            this.VUFE_new.Name = "VUFE_new";
-            this.VUFE_new.Size = new System.Drawing.Size(75, 23);
-            this.VUFE_new.TabIndex = 9;
-            this.VUFE_new.Text = "New";
-            this.VUFE_new.UseVisualStyleBackColor = true;
-            this.VUFE_new.Click += new System.EventHandler(this.VUFE_new_Click);
-            // 
-            // VUFE_open
-            // 
-            this.VUFE_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VUFE_open.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUFE_open.Location = new System.Drawing.Point(90, 10);
-            this.VUFE_open.Name = "VUFE_open";
-            this.VUFE_open.Size = new System.Drawing.Size(75, 23);
-            this.VUFE_open.TabIndex = 8;
-            this.VUFE_open.Text = "Open";
-            this.VUFE_open.UseVisualStyleBackColor = true;
-            this.VUFE_open.Click += new System.EventHandler(this.VUFE_open_Click);
-            // 
-            // VUFE_save
-            // 
-            this.VUFE_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VUFE_save.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUFE_save.Location = new System.Drawing.Point(10, 10);
-            this.VUFE_save.Name = "VUFE_save";
-            this.VUFE_save.Size = new System.Drawing.Size(75, 23);
-            this.VUFE_save.TabIndex = 7;
-            this.VUFE_save.Text = "Save";
-            this.VUFE_save.UseVisualStyleBackColor = true;
-            this.VUFE_save.Click += new System.EventHandler(this.VUFE_save_Click);
-            // 
-            // VUFE_richTextBox
-            // 
-            this.VUFE_richTextBox.BackColor = System.Drawing.Color.LavenderBlush;
-            this.VUFE_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VUFE_richTextBox.Font = new System.Drawing.Font("Rubik", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUFE_richTextBox.Location = new System.Drawing.Point(10, 40);
-            this.VUFE_richTextBox.Name = "VUFE_richTextBox";
-            this.VUFE_richTextBox.Size = new System.Drawing.Size(940, 580);
-            this.VUFE_richTextBox.TabIndex = 6;
-            this.VUFE_richTextBox.Text = "";
-            // 
             // VUFE_OpenFileDialog
             // 
             this.VUFE_OpenFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
@@ -993,6 +1035,10 @@
             // 
             this.VUFE_SaveFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
     "g";
+            // 
+            // ProgramTick
+            // 
+            this.ProgramTick.Interval = 30;
             // 
             // VersaUtils
             // 
@@ -1067,7 +1113,7 @@
         private System.Windows.Forms.Label PCINFO_INFO_ip;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage StorageKiler;
-        private System.Windows.Forms.Button DeleteTempFiles_Button;
+        private System.Windows.Forms.Button StorageKiller_DeleteTempFiles_Button;
         private System.Windows.Forms.TabPage Password_Gen;
         private System.Windows.Forms.TabPage CamMic_Test;
         private System.Windows.Forms.TabPage ScriptClicker;
@@ -1119,6 +1165,10 @@
         private System.Windows.Forms.RichTextBox VUFE_richTextBox;
         private System.Windows.Forms.OpenFileDialog VUFE_OpenFileDialog;
         private System.Windows.Forms.SaveFileDialog VUFE_SaveFileDialog;
+        private System.Windows.Forms.Timer ProgramTick;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button StorageKiller_ClearRecycleBin_Button;
+        private System.Windows.Forms.Button StorageKiller_ClearDownloadFolder_Button;
     }
 }
 
