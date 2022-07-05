@@ -1,1 +1,7 @@
 ﻿added - abfrage auf beenden der applikation wenn autoshutdown aktiv ist oder der VUFE text nicht gespeichert ist.
+added - Dev mode wird ab jetzt gespeichert
+added - some dev mode shit
+added - more logs in the console in dev mode
+added - VUFE auto save
+
+changed - Animegirl auf der main page größer gemacht

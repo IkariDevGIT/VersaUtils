@@ -34,5 +34,29 @@ namespace VersaUtils {
                 this["EnableAnimeGirlsSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DevMode {
+            get {
+                return ((bool)(this["DevMode"]));
+            }
+            set {
+                this["DevMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string VUFETemp {
+            get {
+                return ((string)(this["VUFETemp"]));
+            }
+            set {
+                this["VUFETemp"] = value;
+            }
+        }
     }
 }

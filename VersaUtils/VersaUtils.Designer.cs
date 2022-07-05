@@ -82,6 +82,10 @@
             this.ScriptClicker_save_Button = new System.Windows.Forms.Button();
             this.ScriptClicker_ScriptArea = new System.Windows.Forms.RichTextBox();
             this.Fast_Options_Tab = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -204,7 +208,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(445, 390);
+            this.label15.Location = new System.Drawing.Point(445, 490);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 21);
             this.label15.TabIndex = 8;
@@ -213,9 +217,9 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::VersaUtils.Properties.Resources.AnimeGirl_Normal;
-            this.pictureBox7.Location = new System.Drawing.Point(301, 140);
+            this.pictureBox7.Location = new System.Drawing.Point(282, 140);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(360, 250);
+            this.pictureBox7.Size = new System.Drawing.Size(399, 340);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
@@ -272,6 +276,7 @@
             this.DevMode_CheckBox.TabIndex = 5;
             this.DevMode_CheckBox.Text = "Dev mode";
             this.DevMode_CheckBox.UseVisualStyleBackColor = true;
+            this.DevMode_CheckBox.CheckedChanged += new System.EventHandler(this.DevMode_CheckBox_CheckedChanged);
             // 
             // Pc_Info
             // 
@@ -759,6 +764,10 @@
             // Fast_Options_Tab
             // 
             this.Fast_Options_Tab.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Fast_Options_Tab.Controls.Add(this.textBox1);
+            this.Fast_Options_Tab.Controls.Add(this.button4);
+            this.Fast_Options_Tab.Controls.Add(this.button3);
+            this.Fast_Options_Tab.Controls.Add(this.button2);
             this.Fast_Options_Tab.Controls.Add(this.label11);
             this.Fast_Options_Tab.Controls.Add(this.button1);
             this.Fast_Options_Tab.Controls.Add(this.pictureBox5);
@@ -767,6 +776,50 @@
             this.Fast_Options_Tab.Size = new System.Drawing.Size(962, 653);
             this.Fast_Options_Tab.TabIndex = 7;
             this.Fast_Options_Tab.Text = "Fast Options";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(850, 170);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(80, 28);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "Process";
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(850, 120);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(80, 40);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Fuck Process";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(220, 50);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 40);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "[Force] Close all apps";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(130, 50);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 40);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Close all apps";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -859,6 +912,7 @@
             this.VUFE_richTextBox.Size = new System.Drawing.Size(940, 580);
             this.VUFE_richTextBox.TabIndex = 6;
             this.VUFE_richTextBox.Text = "";
+            this.VUFE_richTextBox.TextChanged += new System.EventHandler(this.VUFE_richTextBox_TextChanged);
             // 
             // Auto_Shutdown
             // 
@@ -1055,10 +1109,6 @@
             this.VUFE_SaveFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
     "g";
             // 
-            // ProgramTick
-            // 
-            this.ProgramTick.Interval = 30;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::VersaUtils.Properties.Resources.logo2;
@@ -1215,6 +1265,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.CheckBox EnableAnimeGirls;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

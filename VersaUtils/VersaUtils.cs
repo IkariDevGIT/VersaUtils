@@ -18,23 +18,41 @@ namespace VersaUtils
 {
     public partial class VersaUtils : Form
     {
+
+        //if (Settings.Default.DevMode){Log(""); }
         public String VersaFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\VersaUtils";
         public String VersaConfig = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\VersaUtils\Config.txt";
-        public Boolean DontActivate = true;
+        public Boolean DontActivateCheckBoxState = true;
+
+        void Log(string str)
+        {
+
+            log_text.AppendText(DateTime.Now.ToString("HH:mm:ss") + ": " + str + "\r\n");
+            log_text.ScrollToCaret();
+
+        }
 
         public VersaUtils()
         {
             InitializeComponent();
+            //Task.Delay(1000).Wait();
+            if (Settings.Default.DevMode) { Log("Initializing..."); }
+            if (Settings.Default.DevMode) { Log("Disabling elements..."); }
             PCINFO_INFO_totalspace.Visible = false;
             PCINFO_INFO_freespace.Visible = false;
             label8.Visible = false;
             label10.Visible = false;
+            if (Settings.Default.DevMode) { Log("Elements disabled."); }
             //AutoShutdown_progressBar.ForeColor(Color.Brown);
             // AutoShutdown_progressBar.BackColor(Color.Brown);
+            //if (DevMode_CheckBox.Checked) { Log("Disabling Storage killer clear download folder for IkariDev"); }
             if (Environment.UserName.ToString() == "einea")
             {
-            StorageKiller_ClearDownloadFolder_Button.Enabled = false;
+                if (Settings.Default.DevMode) { Log("Disabling Storage killer clear download folder for IkariDev"); }
+                StorageKiller_ClearDownloadFolder_Button.Enabled = false;
+                if (Settings.Default.DevMode) { Log("Disabled"); }
             }
+            //if (DevMode_CheckBox.Checked) { Log("Disabled"); }
             //Log(Environment.UserName.ToString());
             /*
             Log(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
@@ -45,25 +63,43 @@ namespace VersaUtils
                 File.WriteAllText(VersaConfig, String.Empty);
             }
             */
-            
-             EnableAnimeGirls.Checked = Settings.Default.EnableAnimeGirlsSetting;
-             DontActivate = false;
-             Vis(pictureBox6, Settings.Default.EnableAnimeGirlsSetting);
+
+            if(Settings.Default.EnableAnimeGirlsSetting == false)
+            {if (Settings.Default.DevMode) { Log("Anime girls Disabling..."); }}
+            EnableAnimeGirls.Checked = Settings.Default.EnableAnimeGirlsSetting;
+            DevMode_CheckBox.Checked = Settings.Default.DevMode;
+            Vis(pictureBox6, Settings.Default.EnableAnimeGirlsSetting);
              Vis(pictureBox7, Settings.Default.EnableAnimeGirlsSetting);
              Vis(pictureBox8, Settings.Default.EnableAnimeGirlsSetting);
              label14.Visible = Settings.Default.EnableAnimeGirlsSetting;
              label15.Visible = Settings.Default.EnableAnimeGirlsSetting;
+            if (Settings.Default.EnableAnimeGirlsSetting == false)
+            { if (Settings.Default.DevMode) { Log("Anime girls Disabled."); } }
+
+            if (Settings.Default.VUFETemp.Length != 0)
+            {
+                var confirmResult2 = MessageBox.Show("Do you want to load your unsaved VUFE document? You can only do this once. When you click NO the Temporarily saved document will be deleted!", "WARNING!!!", MessageBoxButtons.YesNo);
+                if (confirmResult2 == DialogResult.Yes)
+                { 
+                    VUFE_richTextBox.Text = Settings.Default.VUFETemp;
+                    Settings.Default.VUFETemp = null;
+                    if (Settings.Default.DevMode) { Log("Temp VUFE document was pasted."); }
+                }
+                else { Settings.Default.VUFETemp = null; }
+            }
 
 
 
 
 
 
+            DontActivateCheckBoxState = false;
+            if (Settings.Default.DevMode) { Log("Initializing end."); }
         }
 
         private void DisableAnimeGirls_CheckedChanged(object sender, EventArgs e)
         {
-            if (DontActivate == false)
+            if (DontActivateCheckBoxState == false)
             {
                 if (EnableAnimeGirls.Checked)
                 {
@@ -82,6 +118,16 @@ namespace VersaUtils
 
         }
 
+        private void DevMode_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DontActivateCheckBoxState == false)
+            {
+                Settings.Default.DevMode = DevMode_CheckBox.Checked;
+                Settings.Default.Save();
+                MessageBox.Show("Restart to apply settings!");
+            }
+        }
+
         enum RecycleFlags : uint
         {
             SHRB_NOCONFIRMATION = 0x00000001, // Don't ask confirmation
@@ -89,17 +135,11 @@ namespace VersaUtils
             SHRB_NOSOUND = 0x00000004 // Don't make sound, ninja mode enabled :v
         }
 
-        void Log(string str)
-        {
-
-            log_text.AppendText(DateTime.Now.ToString("HH:mm:ss") + ": " + str + "\r\n");
-            log_text.ScrollToCaret();
-
-        }
+        
         [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
         static extern uint SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
 
-        public static string GetLocalIPAddress()
+        public string GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
@@ -114,7 +154,7 @@ namespace VersaUtils
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!DevMode_CheckBox.Checked)
+            if (!Settings.Default.DevMode)
             {
                 //|
                 int index = tabControl.SelectedIndex;
@@ -155,7 +195,7 @@ namespace VersaUtils
                     Log(@"The recycle bin couldn't be recycled");
                     //Log("ERROR: " + error);
                 }
-
+                
                 //Log("Temp Files were deleted!");
 
             }
@@ -686,13 +726,34 @@ namespace VersaUtils
                 else { e.Cancel = true; }
             }
             if(VUFE_richTextBox.TextLength != 0){
-                var confirmResult2 = MessageBox.Show("Your VUFE document isn´t saved, do you really wanna quit the application?", "WARNING!!!", MessageBoxButtons.YesNo);
+                var confirmResult2 = MessageBox.Show("Your VUFE document isn´t saved, do you really wanna quit the application? ", "WARNING!!!", MessageBoxButtons.YesNo);
                 if (confirmResult2 == DialogResult.Yes)
-                { Application.ExitThread(); }
+                { Application.ExitThread();
+                    //Settings.Default.VUFETemp = VUFE_richTextBox.Text;
+                   // Settings.Default.Save();
+                }
                 else { e.Cancel = true; }
             }
 
 
         }
+
+        private void VUFE_richTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.VUFETemp = VUFE_richTextBox.Text;
+            Settings.Default.Save();
+            try
+            {
+                if (Settings.Default.DevMode && VUFE_richTextBox.Text != null) { Log("VUFE text was temp saved! Char:" + VUFE_richTextBox.Text.Substring(VUFE_richTextBox.Text.Length - 1)); }
+            }
+            catch (Exception error)
+            {
+                //Log(error.GetType().ToString());
+                if(error.GetType().ToString() != "System.ArgumentOutOfRangeException")
+                {
+                    Log(error.ToString());
+                }
+            }
+          }
     }
 }

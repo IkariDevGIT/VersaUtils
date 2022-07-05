@@ -131,6 +131,7 @@
   <ItemGroup>
     <Content Include="ChangeLog.txt" />
     <Content Include="logo2.ico" />
+    <Content Include="ToDo.txt" />
     <None Include="Resources\43c3d78afed80c2c68240e622437d81e.gif" />
     <None Include="Resources\ezgif-1-15be8251eb.gif" />
     <None Include="Resources\ezgif-1-1cbedf18d5.gif" />
