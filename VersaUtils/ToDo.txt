@@ -8,7 +8,6 @@ stopuhr
 bitcoin price
 wetter
 backround changer
-Text editor temp save
 options save
 youtube video downloader
 cpu und ram info

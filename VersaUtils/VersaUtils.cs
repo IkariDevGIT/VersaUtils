@@ -38,6 +38,7 @@ namespace VersaUtils
             InitializeComponent();
             //Task.Delay(1000).Wait();
             if (Settings.Default.DevMode) { Log("Initializing..."); }
+            //AutoShutdown_SL.TextAlign = (ContentAlignment)HorizontalAlignment.Center;
             if (Settings.Default.DevMode) { Log("Disabling elements..."); }
             PCINFO_INFO_totalspace.Visible = false;
             PCINFO_INFO_freespace.Visible = false;
@@ -759,26 +760,42 @@ namespace VersaUtils
 
         private void FastOptions_FuckProcess_Button_Click(object sender, EventArgs e)
         {
-            Process[] workers = Process.GetProcessesByName(FastOptions_FuckProcess_TextBox.Text);
-            foreach (Process worker in workers)
+            var confirmResult2 = MessageBox.Show("Do you really want to close this process? This can cause damage!", "WARNING!!!", MessageBoxButtons.YesNo);
+            if (confirmResult2 == DialogResult.Yes)
             {
-                worker.Kill();
-                //worker.WaitForExit();
-                worker.Dispose();
+                Process[] workers = Process.GetProcessesByName(FastOptions_FuckProcess_TextBox.Text);
+                foreach (Process worker in workers)
+                {
+                    worker.Kill();
+                    //worker.WaitForExit();
+                    worker.Dispose();
+                }
+            }
+            
+        }
+
+
+        private void FastOptions_CloseAllApps_Button_Click(object sender, EventArgs e)
+        {
+            var confirmResult2 = MessageBox.Show("Do you really want to close all applications? This can cause damage!", "WARNING!!!", MessageBoxButtons.YesNo);
+            if (confirmResult2 == DialogResult.Yes)
+            {
+                Process me = Process.GetCurrentProcess();
+                foreach (Process p in Process.GetProcesses())
+                {
+                    if (p.Id != me.Id)
+                        p.CloseMainWindow(); // Sends WM_CLOSE; less gentle methods available too
+                }
             }
         }
 
-        private void FastOptions_ForceCloseAllApps_Button_Click(object sender, EventArgs e)
+        private void ProgramTick_Tick(object sender, EventArgs e)
         {
-            // I mean it! This will cause badness!
+            //int y = (this.Height / 2) - (label1.Height / 2);
+            int y = AutoShutdown_SL.Location.Y;
+            int x = (this.Width / 2) - (AutoShutdown_SL.Width / 2);
             
-
-            Process me = Process.GetCurrentProcess();
-            foreach (Process p in Process.GetProcesses())
-            {
-                if (p.Id != me.Id)
-                    p.CloseMainWindow(); // Sends WM_CLOSE; less gentle methods available too
-            }
+            AutoShutdown_SL.Location = new Point(x, y);
         }
     }
 }

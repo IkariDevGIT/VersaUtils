@@ -5,3 +5,4 @@ added - more logs in the console in dev mode
 added - VUFE auto save
 
 changed - Animegirl auf der main page größer gemacht
+changed - the style on the Autoshutdown page

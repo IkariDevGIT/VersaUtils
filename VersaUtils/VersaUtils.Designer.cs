@@ -86,7 +86,6 @@
             this.FastOptions_FuckProcess_Button = new System.Windows.Forms.Button();
             this.FastOptions_ForceCloseAllApps_Button = new System.Windows.Forms.Button();
             this.FastOptions_CloseAllApps_Button = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.FastOptions_CleanDesktop_Button = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.VUFE = new System.Windows.Forms.TabPage();
@@ -768,7 +767,6 @@
             this.Fast_Options_Tab.Controls.Add(this.FastOptions_FuckProcess_Button);
             this.Fast_Options_Tab.Controls.Add(this.FastOptions_ForceCloseAllApps_Button);
             this.Fast_Options_Tab.Controls.Add(this.FastOptions_CloseAllApps_Button);
-            this.Fast_Options_Tab.Controls.Add(this.label11);
             this.Fast_Options_Tab.Controls.Add(this.FastOptions_CleanDesktop_Button);
             this.Fast_Options_Tab.Controls.Add(this.pictureBox5);
             this.Fast_Options_Tab.Location = new System.Drawing.Point(4, 33);
@@ -779,7 +777,7 @@
             // 
             // FastOptions_FuckProcess_TextBox
             // 
-            this.FastOptions_FuckProcess_TextBox.Location = new System.Drawing.Point(850, 170);
+            this.FastOptions_FuckProcess_TextBox.Location = new System.Drawing.Point(850, 70);
             this.FastOptions_FuckProcess_TextBox.Name = "FastOptions_FuckProcess_TextBox";
             this.FastOptions_FuckProcess_TextBox.Size = new System.Drawing.Size(80, 28);
             this.FastOptions_FuckProcess_TextBox.TabIndex = 9;
@@ -790,7 +788,7 @@
             this.FastOptions_FuckProcess_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FastOptions_FuckProcess_Button.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FastOptions_FuckProcess_Button.ForeColor = System.Drawing.Color.Black;
-            this.FastOptions_FuckProcess_Button.Location = new System.Drawing.Point(850, 120);
+            this.FastOptions_FuckProcess_Button.Location = new System.Drawing.Point(850, 20);
             this.FastOptions_FuckProcess_Button.Name = "FastOptions_FuckProcess_Button";
             this.FastOptions_FuckProcess_Button.Size = new System.Drawing.Size(80, 40);
             this.FastOptions_FuckProcess_Button.TabIndex = 8;
@@ -800,45 +798,37 @@
             // 
             // FastOptions_ForceCloseAllApps_Button
             // 
+            this.FastOptions_ForceCloseAllApps_Button.Enabled = false;
             this.FastOptions_ForceCloseAllApps_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FastOptions_ForceCloseAllApps_Button.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FastOptions_ForceCloseAllApps_Button.ForeColor = System.Drawing.Color.Black;
-            this.FastOptions_ForceCloseAllApps_Button.Location = new System.Drawing.Point(220, 50);
+            this.FastOptions_ForceCloseAllApps_Button.Location = new System.Drawing.Point(220, 10);
             this.FastOptions_ForceCloseAllApps_Button.Name = "FastOptions_ForceCloseAllApps_Button";
             this.FastOptions_ForceCloseAllApps_Button.Size = new System.Drawing.Size(100, 40);
             this.FastOptions_ForceCloseAllApps_Button.TabIndex = 7;
             this.FastOptions_ForceCloseAllApps_Button.Text = "[Force] Close all apps";
             this.FastOptions_ForceCloseAllApps_Button.UseVisualStyleBackColor = true;
-            this.FastOptions_ForceCloseAllApps_Button.Click += new System.EventHandler(this.FastOptions_ForceCloseAllApps_Button_Click);
             // 
             // FastOptions_CloseAllApps_Button
             // 
             this.FastOptions_CloseAllApps_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FastOptions_CloseAllApps_Button.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FastOptions_CloseAllApps_Button.ForeColor = System.Drawing.Color.Black;
-            this.FastOptions_CloseAllApps_Button.Location = new System.Drawing.Point(130, 50);
+            this.FastOptions_CloseAllApps_Button.Location = new System.Drawing.Point(130, 10);
             this.FastOptions_CloseAllApps_Button.Name = "FastOptions_CloseAllApps_Button";
             this.FastOptions_CloseAllApps_Button.Size = new System.Drawing.Size(80, 40);
             this.FastOptions_CloseAllApps_Button.TabIndex = 6;
             this.FastOptions_CloseAllApps_Button.Text = "Close all apps";
             this.FastOptions_CloseAllApps_Button.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Reem Kufi", 14.25F);
-            this.label11.Location = new System.Drawing.Point(440, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 36);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "label11";
+            this.FastOptions_CloseAllApps_Button.Click += new System.EventHandler(this.FastOptions_CloseAllApps_Button_Click);
             // 
             // FastOptions_CleanDesktop_Button
             // 
+            this.FastOptions_CleanDesktop_Button.Enabled = false;
             this.FastOptions_CleanDesktop_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FastOptions_CleanDesktop_Button.Font = new System.Drawing.Font("Rubik", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FastOptions_CleanDesktop_Button.ForeColor = System.Drawing.Color.Black;
-            this.FastOptions_CleanDesktop_Button.Location = new System.Drawing.Point(40, 50);
+            this.FastOptions_CleanDesktop_Button.Location = new System.Drawing.Point(40, 10);
             this.FastOptions_CleanDesktop_Button.Name = "FastOptions_CleanDesktop_Button";
             this.FastOptions_CleanDesktop_Button.Size = new System.Drawing.Size(80, 40);
             this.FastOptions_CleanDesktop_Button.TabIndex = 0;
@@ -848,7 +838,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::VersaUtils.Properties.Resources.Line21;
-            this.pictureBox5.Location = new System.Drawing.Point(30, 100);
+            this.pictureBox5.Location = new System.Drawing.Point(30, 120);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(900, 10);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -920,14 +910,14 @@
             // 
             this.Auto_Shutdown.BackColor = System.Drawing.Color.LavenderBlush;
             this.Auto_Shutdown.Controls.Add(this.label14);
-            this.Auto_Shutdown.Controls.Add(this.AutoShutdown_SL);
-            this.Auto_Shutdown.Controls.Add(this.label12);
             this.Auto_Shutdown.Controls.Add(this.AutoShutdown_Cancel);
             this.Auto_Shutdown.Controls.Add(this.label13);
             this.Auto_Shutdown.Controls.Add(this.AutoShutdown_S);
             this.Auto_Shutdown.Controls.Add(this.AutoShutdown_Start);
             this.Auto_Shutdown.Controls.Add(this.AutoShutdown_progressBar);
             this.Auto_Shutdown.Controls.Add(this.pictureBox6);
+            this.Auto_Shutdown.Controls.Add(this.AutoShutdown_SL);
+            this.Auto_Shutdown.Controls.Add(this.label12);
             this.Auto_Shutdown.Location = new System.Drawing.Point(4, 33);
             this.Auto_Shutdown.Name = "Auto_Shutdown";
             this.Auto_Shutdown.Size = new System.Drawing.Size(962, 653);
@@ -946,10 +936,10 @@
             // AutoShutdown_SL
             // 
             this.AutoShutdown_SL.AutoSize = true;
-            this.AutoShutdown_SL.Font = new System.Drawing.Font("Reem Kufi", 27.75F);
-            this.AutoShutdown_SL.Location = new System.Drawing.Point(450, 60);
+            this.AutoShutdown_SL.Font = new System.Drawing.Font("Reem Kufi", 48F, System.Drawing.FontStyle.Bold);
+            this.AutoShutdown_SL.Location = new System.Drawing.Point(384, 50);
             this.AutoShutdown_SL.Name = "AutoShutdown_SL";
-            this.AutoShutdown_SL.Size = new System.Drawing.Size(111, 71);
+            this.AutoShutdown_SL.Size = new System.Drawing.Size(197, 122);
             this.AutoShutdown_SL.TabIndex = 7;
             this.AutoShutdown_SL.Text = "none";
             // 
@@ -957,7 +947,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Reem Kufi", 27.75F);
-            this.label12.Location = new System.Drawing.Point(210, 60);
+            this.label12.Location = new System.Drawing.Point(362, -10);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(238, 71);
             this.label12.TabIndex = 6;
@@ -967,7 +957,8 @@
             // 
             this.AutoShutdown_Cancel.Enabled = false;
             this.AutoShutdown_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AutoShutdown_Cancel.Location = new System.Drawing.Point(220, 270);
+            this.AutoShutdown_Cancel.Font = new System.Drawing.Font("Reem Kufi", 20.25F);
+            this.AutoShutdown_Cancel.Location = new System.Drawing.Point(221, 310);
             this.AutoShutdown_Cancel.Name = "AutoShutdown_Cancel";
             this.AutoShutdown_Cancel.Size = new System.Drawing.Size(520, 120);
             this.AutoShutdown_Cancel.TabIndex = 5;
@@ -978,7 +969,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(220, 10);
+            this.label13.Location = new System.Drawing.Point(180, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 21);
             this.label13.TabIndex = 4;
@@ -987,7 +978,7 @@
             // AutoShutdown_S
             // 
             this.AutoShutdown_S.BackColor = System.Drawing.Color.LavenderBlush;
-            this.AutoShutdown_S.Location = new System.Drawing.Point(280, 10);
+            this.AutoShutdown_S.Location = new System.Drawing.Point(240, 10);
             this.AutoShutdown_S.Maximum = new decimal(new int[] {
             1440,
             0,
@@ -1005,7 +996,8 @@
             // AutoShutdown_Start
             // 
             this.AutoShutdown_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AutoShutdown_Start.Location = new System.Drawing.Point(220, 140);
+            this.AutoShutdown_Start.Font = new System.Drawing.Font("Reem Kufi", 20.25F);
+            this.AutoShutdown_Start.Location = new System.Drawing.Point(221, 180);
             this.AutoShutdown_Start.Name = "AutoShutdown_Start";
             this.AutoShutdown_Start.Size = new System.Drawing.Size(520, 120);
             this.AutoShutdown_Start.TabIndex = 0;
@@ -1017,7 +1009,7 @@
             // 
             this.AutoShutdown_progressBar.BackColor = System.Drawing.Color.Lime;
             this.AutoShutdown_progressBar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.AutoShutdown_progressBar.Location = new System.Drawing.Point(30, 440);
+            this.AutoShutdown_progressBar.Location = new System.Drawing.Point(26, 440);
             this.AutoShutdown_progressBar.Maximum = 0;
             this.AutoShutdown_progressBar.Name = "AutoShutdown_progressBar";
             this.AutoShutdown_progressBar.Size = new System.Drawing.Size(910, 190);
@@ -1110,6 +1102,11 @@
             // 
             this.VUFE_SaveFileDialog.Filter = "VUFE Versa Utils File|*.vufe|Textdocument|*.txt|Textdocument|*.text|Log File|*.lo" +
     "g";
+            // 
+            // ProgramTick
+            // 
+            this.ProgramTick.Enabled = true;
+            this.ProgramTick.Tick += new System.EventHandler(this.ProgramTick_Tick);
             // 
             // pictureBox2
             // 
@@ -1239,7 +1236,6 @@
         private System.Windows.Forms.TabPage VUFE;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button FastOptions_CleanDesktop_Button;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TabPage Auto_Shutdown;
         private System.Windows.Forms.NumericUpDown AutoShutdown_S;
