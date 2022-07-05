@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+
 namespace VersaUtils
 {
     public partial class VersaUtils : Form
@@ -755,5 +756,29 @@ namespace VersaUtils
                 }
             }
           }
+
+        private void FastOptions_FuckProcess_Button_Click(object sender, EventArgs e)
+        {
+            Process[] workers = Process.GetProcessesByName(FastOptions_FuckProcess_TextBox.Text);
+            foreach (Process worker in workers)
+            {
+                worker.Kill();
+                //worker.WaitForExit();
+                worker.Dispose();
+            }
+        }
+
+        private void FastOptions_ForceCloseAllApps_Button_Click(object sender, EventArgs e)
+        {
+            // I mean it! This will cause badness!
+            
+
+            Process me = Process.GetCurrentProcess();
+            foreach (Process p in Process.GetProcesses())
+            {
+                if (p.Id != me.Id)
+                    p.CloseMainWindow(); // Sends WM_CLOSE; less gentle methods available too
+            }
+        }
     }
 }
