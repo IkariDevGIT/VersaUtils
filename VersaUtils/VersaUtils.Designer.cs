@@ -89,10 +89,13 @@
             this.FastOptions_CleanDesktop_Button = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.VUFE = new System.Windows.Forms.TabPage();
+            this.VUFE_TextSizeReset = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.VUFE_new = new System.Windows.Forms.Button();
             this.VUFE_open = new System.Windows.Forms.Button();
             this.VUFE_save = new System.Windows.Forms.Button();
             this.VUFE_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.VUFEmini_TextSize = new System.Windows.Forms.TrackBar();
             this.Auto_Shutdown = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.AutoShutdown_Cancel = new System.Windows.Forms.Button();
@@ -117,9 +120,7 @@
             this.ProgramTick = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.VUFEmini_TextSize = new System.Windows.Forms.TrackBar();
-            this.label11 = new System.Windows.Forms.Label();
-            this.VUFE_TextSizeReset = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.Main_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -136,13 +137,13 @@
             this.Fast_Options_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.VUFE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VUFEmini_TextSize)).BeginInit();
             this.Auto_Shutdown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AutoShutdown_S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.Log_f.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VUFEmini_TextSize)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -865,6 +866,27 @@
             this.VUFE.TabIndex = 8;
             this.VUFE.Text = "VUFEmini - File Editor";
             // 
+            // VUFE_TextSizeReset
+            // 
+            this.VUFE_TextSizeReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_TextSizeReset.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_TextSizeReset.Location = new System.Drawing.Point(910, 0);
+            this.VUFE_TextSizeReset.Name = "VUFE_TextSizeReset";
+            this.VUFE_TextSizeReset.Size = new System.Drawing.Size(50, 20);
+            this.VUFE_TextSizeReset.TabIndex = 12;
+            this.VUFE_TextSizeReset.Text = "Reset";
+            this.VUFE_TextSizeReset.UseVisualStyleBackColor = true;
+            this.VUFE_TextSizeReset.Click += new System.EventHandler(this.VUFE_TextSizeReset_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(660, 30);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 21);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Text size:";
+            // 
             // VUFE_new
             // 
             this.VUFE_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -912,6 +934,17 @@
             this.VUFE_richTextBox.TabIndex = 6;
             this.VUFE_richTextBox.Text = "";
             this.VUFE_richTextBox.TextChanged += new System.EventHandler(this.VUFE_richTextBox_TextChanged);
+            // 
+            // VUFEmini_TextSize
+            // 
+            this.VUFEmini_TextSize.Location = new System.Drawing.Point(720, 30);
+            this.VUFEmini_TextSize.Maximum = 100;
+            this.VUFEmini_TextSize.Minimum = 5;
+            this.VUFEmini_TextSize.Name = "VUFEmini_TextSize";
+            this.VUFEmini_TextSize.Size = new System.Drawing.Size(220, 45);
+            this.VUFEmini_TextSize.TabIndex = 10;
+            this.VUFEmini_TextSize.Value = 20;
+            this.VUFEmini_TextSize.Scroll += new System.EventHandler(this.VUFEmini_TextSize_Scroll);
             // 
             // Auto_Shutdown
             // 
@@ -1136,37 +1169,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // VUFEmini_TextSize
+            // label16
             // 
-            this.VUFEmini_TextSize.Location = new System.Drawing.Point(720, 30);
-            this.VUFEmini_TextSize.Maximum = 100;
-            this.VUFEmini_TextSize.Minimum = 5;
-            this.VUFEmini_TextSize.Name = "VUFEmini_TextSize";
-            this.VUFEmini_TextSize.Size = new System.Drawing.Size(220, 45);
-            this.VUFEmini_TextSize.TabIndex = 10;
-            this.VUFEmini_TextSize.Value = 20;
-            this.VUFEmini_TextSize.Scroll += new System.EventHandler(this.VUFEmini_TextSize_Scroll);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(660, 30);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 21);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Text size:";
-            // 
-            // VUFE_TextSizeReset
-            // 
-            this.VUFE_TextSizeReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VUFE_TextSizeReset.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUFE_TextSizeReset.Location = new System.Drawing.Point(910, 0);
-            this.VUFE_TextSizeReset.Name = "VUFE_TextSizeReset";
-            this.VUFE_TextSizeReset.Size = new System.Drawing.Size(50, 20);
-            this.VUFE_TextSizeReset.TabIndex = 12;
-            this.VUFE_TextSizeReset.Text = "Reset";
-            this.VUFE_TextSizeReset.UseVisualStyleBackColor = true;
-            this.VUFE_TextSizeReset.Click += new System.EventHandler(this.VUFE_TextSizeReset_Click);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Source Code Pro Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(4, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(119, 14);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Version: 1.4.1";
             // 
             // VersaUtils
             // 
@@ -1174,6 +1185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(1033, 825);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -1206,6 +1218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.VUFE.ResumeLayout(false);
             this.VUFE.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VUFEmini_TextSize)).EndInit();
             this.Auto_Shutdown.ResumeLayout(false);
             this.Auto_Shutdown.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AutoShutdown_S)).EndInit();
@@ -1213,7 +1226,6 @@
             this.Log_f.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VUFEmini_TextSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1311,6 +1323,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TrackBar VUFEmini_TextSize;
         private System.Windows.Forms.Button VUFE_TextSizeReset;
+        private System.Windows.Forms.Label label16;
     }
 }
 

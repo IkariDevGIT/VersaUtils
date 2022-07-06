@@ -1,1 +1,3 @@
-﻿bugfix - when you saved a VUFE document, and then closed the application, it still asked you to save
+﻿added - version text
+
+bugfix - when you saved a VUFE document, and then closed the application, it still asked you to save
