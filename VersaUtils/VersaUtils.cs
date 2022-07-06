@@ -23,6 +23,7 @@ namespace VersaUtils
         //if (Settings.Default.DevMode){Log(""); }
         public String VersaFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\VersaUtils";
         public String VersaConfig = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\VersaUtils\Config.txt";
+        public Boolean DocumentSaved = false;
         public Boolean DontActivateCheckBoxState = true;
 
         void Log(string str)
@@ -590,6 +591,7 @@ namespace VersaUtils
 
                 //always close your stream
                 sw.Close();
+                DocumentSaved = true;
                 Log("VUFE file " + VUFE_SaveFileDialog.FileName + " was saved!");
                 
             }
@@ -731,11 +733,11 @@ namespace VersaUtils
                 { Application.ExitThread(); }
                 else { e.Cancel = true; }
             }
-            if(VUFE_richTextBox.TextLength != 0){
+            if(VUFE_richTextBox.TextLength != 0 && !DocumentSaved){
                 var confirmResult2 = MessageBox.Show("Your VUFE document isn´t saved, do you really wanna quit the application? ", "WARNING!!!", MessageBoxButtons.YesNo);
                 if (confirmResult2 == DialogResult.Yes)
                 { Application.ExitThread();
-                    //Settings.Default.VUFETemp = VUFE_richTextBox.Text;
+                    Settings.Default.VUFETemp = null;
                    // Settings.Default.Save();
                 }
                 else { e.Cancel = true; }
@@ -746,6 +748,7 @@ namespace VersaUtils
 
         private void VUFE_richTextBox_TextChanged(object sender, EventArgs e)
         {
+            DocumentSaved = false;
             Settings.Default.VUFETemp = VUFE_richTextBox.Text;
             Settings.Default.Save();
             try
