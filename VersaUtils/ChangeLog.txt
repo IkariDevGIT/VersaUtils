@@ -1,8 +1,11 @@
-﻿added - abfrage auf beenden der applikation wenn autoshutdown aktiv ist oder der VUFE text nicht gespeichert ist.
-added - Dev mode wird ab jetzt gespeichert
+﻿added - prompt for application termination if autoshutdown is active or the VUFE text is not saved.
+added - Dev mode is now saved
 added - some dev mode shit
 added - more logs in the console in dev mode
 added - VUFE auto save
+added - fast options(Close all apps, Fuck process)
+added - text size slider with save feature + a reset button
+added - when you versa utils with an unsaved(temp saved) VUFE document and click yes, its gonna jump to VUFE
 
-changed - Animegirl auf der main page größer gemacht
+changed - Animegirl on the main page is now bigger
 changed - the style on the Autoshutdown page

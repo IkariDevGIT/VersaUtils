@@ -95,14 +95,14 @@
             this.VUFE_richTextBox = new System.Windows.Forms.RichTextBox();
             this.Auto_Shutdown = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
-            this.AutoShutdown_SL = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.AutoShutdown_Cancel = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.AutoShutdown_S = new System.Windows.Forms.NumericUpDown();
             this.AutoShutdown_Start = new System.Windows.Forms.Button();
             this.AutoShutdown_progressBar = new System.Windows.Forms.ProgressBar();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.AutoShutdown_SL = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.Log_f = new System.Windows.Forms.TabPage();
             this.ClearLog_Button = new System.Windows.Forms.Button();
             this.SaveLog_Button = new System.Windows.Forms.Button();
@@ -117,6 +117,9 @@
             this.ProgramTick = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.VUFEmini_TextSize = new System.Windows.Forms.TrackBar();
+            this.label11 = new System.Windows.Forms.Label();
+            this.VUFE_TextSizeReset = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.Main_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -139,6 +142,7 @@
             this.Log_f.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VUFEmini_TextSize)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -848,10 +852,13 @@
             // VUFE
             // 
             this.VUFE.BackColor = System.Drawing.Color.LavenderBlush;
+            this.VUFE.Controls.Add(this.VUFE_TextSizeReset);
+            this.VUFE.Controls.Add(this.label11);
             this.VUFE.Controls.Add(this.VUFE_new);
             this.VUFE.Controls.Add(this.VUFE_open);
             this.VUFE.Controls.Add(this.VUFE_save);
             this.VUFE.Controls.Add(this.VUFE_richTextBox);
+            this.VUFE.Controls.Add(this.VUFEmini_TextSize);
             this.VUFE.Location = new System.Drawing.Point(4, 33);
             this.VUFE.Name = "VUFE";
             this.VUFE.Size = new System.Drawing.Size(962, 653);
@@ -899,7 +906,7 @@
             this.VUFE_richTextBox.BackColor = System.Drawing.Color.LavenderBlush;
             this.VUFE_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.VUFE_richTextBox.Font = new System.Drawing.Font("Rubik", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUFE_richTextBox.Location = new System.Drawing.Point(10, 40);
+            this.VUFE_richTextBox.Location = new System.Drawing.Point(10, 60);
             this.VUFE_richTextBox.Name = "VUFE_richTextBox";
             this.VUFE_richTextBox.Size = new System.Drawing.Size(940, 580);
             this.VUFE_richTextBox.TabIndex = 6;
@@ -933,32 +940,12 @@
             this.label14.TabIndex = 10;
             this.label14.Text = "KYUUUT!!";
             // 
-            // AutoShutdown_SL
-            // 
-            this.AutoShutdown_SL.AutoSize = true;
-            this.AutoShutdown_SL.Font = new System.Drawing.Font("Reem Kufi", 48F, System.Drawing.FontStyle.Bold);
-            this.AutoShutdown_SL.Location = new System.Drawing.Point(384, 50);
-            this.AutoShutdown_SL.Name = "AutoShutdown_SL";
-            this.AutoShutdown_SL.Size = new System.Drawing.Size(197, 122);
-            this.AutoShutdown_SL.TabIndex = 7;
-            this.AutoShutdown_SL.Text = "none";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Reem Kufi", 27.75F);
-            this.label12.Location = new System.Drawing.Point(362, -10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(238, 71);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Shutdown in:";
-            // 
             // AutoShutdown_Cancel
             // 
             this.AutoShutdown_Cancel.Enabled = false;
             this.AutoShutdown_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AutoShutdown_Cancel.Font = new System.Drawing.Font("Reem Kufi", 20.25F);
-            this.AutoShutdown_Cancel.Location = new System.Drawing.Point(221, 310);
+            this.AutoShutdown_Cancel.Location = new System.Drawing.Point(220, 330);
             this.AutoShutdown_Cancel.Name = "AutoShutdown_Cancel";
             this.AutoShutdown_Cancel.Size = new System.Drawing.Size(520, 120);
             this.AutoShutdown_Cancel.TabIndex = 5;
@@ -997,7 +984,7 @@
             // 
             this.AutoShutdown_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AutoShutdown_Start.Font = new System.Drawing.Font("Reem Kufi", 20.25F);
-            this.AutoShutdown_Start.Location = new System.Drawing.Point(221, 180);
+            this.AutoShutdown_Start.Location = new System.Drawing.Point(220, 200);
             this.AutoShutdown_Start.Name = "AutoShutdown_Start";
             this.AutoShutdown_Start.Size = new System.Drawing.Size(520, 120);
             this.AutoShutdown_Start.TabIndex = 0;
@@ -1009,10 +996,10 @@
             // 
             this.AutoShutdown_progressBar.BackColor = System.Drawing.Color.Lime;
             this.AutoShutdown_progressBar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.AutoShutdown_progressBar.Location = new System.Drawing.Point(26, 440);
+            this.AutoShutdown_progressBar.Location = new System.Drawing.Point(26, 470);
             this.AutoShutdown_progressBar.Maximum = 0;
             this.AutoShutdown_progressBar.Name = "AutoShutdown_progressBar";
-            this.AutoShutdown_progressBar.Size = new System.Drawing.Size(910, 190);
+            this.AutoShutdown_progressBar.Size = new System.Drawing.Size(910, 160);
             this.AutoShutdown_progressBar.Step = 1;
             this.AutoShutdown_progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.AutoShutdown_progressBar.TabIndex = 8;
@@ -1026,6 +1013,26 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 9;
             this.pictureBox6.TabStop = false;
+            // 
+            // AutoShutdown_SL
+            // 
+            this.AutoShutdown_SL.AutoSize = true;
+            this.AutoShutdown_SL.Font = new System.Drawing.Font("Reem Kufi", 48F, System.Drawing.FontStyle.Bold);
+            this.AutoShutdown_SL.Location = new System.Drawing.Point(384, 50);
+            this.AutoShutdown_SL.Name = "AutoShutdown_SL";
+            this.AutoShutdown_SL.Size = new System.Drawing.Size(197, 122);
+            this.AutoShutdown_SL.TabIndex = 7;
+            this.AutoShutdown_SL.Text = "none";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Reem Kufi", 27.75F);
+            this.label12.Location = new System.Drawing.Point(362, -10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(238, 71);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Shutdown in:";
             // 
             // Log_f
             // 
@@ -1129,6 +1136,38 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // VUFEmini_TextSize
+            // 
+            this.VUFEmini_TextSize.Location = new System.Drawing.Point(720, 30);
+            this.VUFEmini_TextSize.Maximum = 100;
+            this.VUFEmini_TextSize.Minimum = 5;
+            this.VUFEmini_TextSize.Name = "VUFEmini_TextSize";
+            this.VUFEmini_TextSize.Size = new System.Drawing.Size(220, 45);
+            this.VUFEmini_TextSize.TabIndex = 10;
+            this.VUFEmini_TextSize.Value = 20;
+            this.VUFEmini_TextSize.Scroll += new System.EventHandler(this.VUFEmini_TextSize_Scroll);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(660, 30);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 21);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Text size:";
+            // 
+            // VUFE_TextSizeReset
+            // 
+            this.VUFE_TextSizeReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VUFE_TextSizeReset.Font = new System.Drawing.Font("Rubik", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUFE_TextSizeReset.Location = new System.Drawing.Point(910, 0);
+            this.VUFE_TextSizeReset.Name = "VUFE_TextSizeReset";
+            this.VUFE_TextSizeReset.Size = new System.Drawing.Size(50, 20);
+            this.VUFE_TextSizeReset.TabIndex = 12;
+            this.VUFE_TextSizeReset.Text = "Reset";
+            this.VUFE_TextSizeReset.UseVisualStyleBackColor = true;
+            this.VUFE_TextSizeReset.Click += new System.EventHandler(this.VUFE_TextSizeReset_Click);
+            // 
             // VersaUtils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1166,6 +1205,7 @@
             this.Fast_Options_Tab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.VUFE.ResumeLayout(false);
+            this.VUFE.PerformLayout();
             this.Auto_Shutdown.ResumeLayout(false);
             this.Auto_Shutdown.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AutoShutdown_S)).EndInit();
@@ -1173,6 +1213,7 @@
             this.Log_f.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VUFEmini_TextSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1267,6 +1308,9 @@
         private System.Windows.Forms.Button FastOptions_FuckProcess_Button;
         private System.Windows.Forms.Button FastOptions_ForceCloseAllApps_Button;
         private System.Windows.Forms.Button FastOptions_CloseAllApps_Button;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TrackBar VUFEmini_TextSize;
+        private System.Windows.Forms.Button VUFE_TextSizeReset;
     }
 }
 

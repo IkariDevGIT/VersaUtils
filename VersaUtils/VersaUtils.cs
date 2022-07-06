@@ -78,18 +78,21 @@ namespace VersaUtils
             if (Settings.Default.EnableAnimeGirlsSetting == false)
             { if (Settings.Default.DevMode) { Log("Anime girls Disabled."); } }
 
-            if (Settings.Default.VUFETemp.Length != 0)
+            if (Settings.Default.VUFETemp != "")
             {
                 var confirmResult2 = MessageBox.Show("Do you want to load your unsaved VUFE document? You can only do this once. When you click NO the Temporarily saved document will be deleted!", "WARNING!!!", MessageBoxButtons.YesNo);
                 if (confirmResult2 == DialogResult.Yes)
                 { 
                     VUFE_richTextBox.Text = Settings.Default.VUFETemp;
                     Settings.Default.VUFETemp = null;
+                    Settings.Default.Save();
+                    tabControl.SelectedIndex = 7;
                     if (Settings.Default.DevMode) { Log("Temp VUFE document was pasted."); }
                 }
-                else { Settings.Default.VUFETemp = null; }
+                else { Settings.Default.VUFETemp = null; Settings.Default.Save(); }
             }
 
+            VUFEmini_TextSize.Value = Settings.Default.VUFE_TextSize_save;
 
 
 
@@ -97,6 +100,7 @@ namespace VersaUtils
 
             DontActivateCheckBoxState = false;
             if (Settings.Default.DevMode) { Log("Initializing end."); }
+            //Log(Settings.Default.VUFETemp);
         }
 
         private void DisableAnimeGirls_CheckedChanged(object sender, EventArgs e)
@@ -160,7 +164,7 @@ namespace VersaUtils
             {
                 //|
                 int index = tabControl.SelectedIndex;
-                if (index == 4 | index == 6)
+                if (index == 4)
                 {
                     tabControl.SelectedIndex = 0;
                     MessageBox.Show("Sorry, under construction!", "Stop!");
@@ -796,6 +800,22 @@ namespace VersaUtils
             int x = (this.Width / 2) - (AutoShutdown_SL.Width / 2);
             
             AutoShutdown_SL.Location = new Point(x, y);
+        }
+
+        private void VUFEmini_TextSize_Scroll(object sender, EventArgs e)
+        {
+            Settings.Default.VUFE_TextSize_save = VUFEmini_TextSize.Value;
+            Settings.Default.Save();
+            VUFE_richTextBox.Font = new Font(VUFE_richTextBox.Font.FontFamily.ToString(), VUFEmini_TextSize.Value);
+            
+        }
+
+        private void VUFE_TextSizeReset_Click(object sender, EventArgs e)
+        {
+            Settings.Default.VUFE_TextSize_save = 20;
+            Settings.Default.Save();
+            VUFEmini_TextSize.Value = 20;
+            VUFE_richTextBox.Font = new Font(VUFE_richTextBox.Font.FontFamily.ToString(), 20);
         }
     }
 }

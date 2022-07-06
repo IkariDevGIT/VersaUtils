@@ -58,5 +58,17 @@ namespace VersaUtils {
                 this["VUFETemp"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int VUFE_TextSize_save {
+            get {
+                return ((int)(this["VUFE_TextSize_save"]));
+            }
+            set {
+                this["VUFE_TextSize_save"] = value;
+            }
+        }
     }
 }

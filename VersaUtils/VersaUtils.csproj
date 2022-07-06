@@ -38,31 +38,11 @@
     <ApplicationIcon>logo2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AtkSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AtkSharp.3.24.24.38\lib\netstandard2.0\AtkSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="CairoSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CairoSharp.3.24.24.38\lib\netstandard2.0\CairoSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GdkSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GdkSharp.3.24.24.38\lib\netstandard2.0\GdkSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GioSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GioSharp.3.24.24.38\lib\netstandard2.0\GioSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GLibSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GLibSharp.3.24.24.38\lib\netstandard2.0\GLibSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GtkSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GtkSharp.3.24.24.38\lib\netstandard2.0\GtkSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="PangoSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PangoSharp.3.24.24.38\lib\netstandard2.0\PangoSharp.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,7 +81,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,11 +145,4 @@
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\GtkSharp.3.24.24.38\build\GtkSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GtkSharp.3.24.24.38\build\GtkSharp.targets'))" />
-  </Target>
-  <Import Project="..\packages\GtkSharp.3.24.24.38\build\GtkSharp.targets" Condition="Exists('..\packages\GtkSharp.3.24.24.38\build\GtkSharp.targets')" />
 </Project>
